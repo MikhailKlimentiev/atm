@@ -1,0 +1,11 @@
+<project>
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>part_1</artifactId>
+   <version>1.0</version>
+   <packaging>jar</packaging>
+   <parent>
+       <groupId>test_tasks</groupId>
+       <artifactId>myArtifactId</artifactId>
+       <version>1.0</version>
+    </parent>
+</project>

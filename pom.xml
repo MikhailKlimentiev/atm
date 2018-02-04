@@ -1,0 +1,19 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>test_tasks</groupId>
+    <artifactId>myArtifactId</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+     <name>mklimentsyeu</name>
+     <url>https://www.epam.com/</url>
+
+    <properties>
+       <maven.compiler.source>1.8</maven.compiler.source>
+       <maven.compiler.target>1.8</maven.compiler.target>
+       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     </properties>
+
+    <modules>
+       <module>part_1</module>
+     </modules>
+</project>
