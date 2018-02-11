@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @since 02/11/2018
  */
 public class RunnerMatrix {
-	public static void main(String [] args){
+	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 
 		Matrix matrix = new Matrix();

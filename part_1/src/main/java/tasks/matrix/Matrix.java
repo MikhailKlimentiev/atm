@@ -24,29 +24,32 @@ public class Matrix {
 	/**
 	 * setMatrixArray.
 	 * The method setMatrixArray(int[][] matrix) initializes the variable int[][] matrixArray
+	 *
 	 * @param matrix
 	 */
-	public void setMatrixArray(int[][] matrix){
+	public void setMatrixArray(int[][] matrix) {
 		this.matrixArray = matrix;
 	}
 
 	/**
 	 * getMatrixArray.
 	 * The method getMatrixArray returns the variable int[][] matrixArray
+	 *
 	 * @return int[][] matrixArray
 	 */
-	public int[][] getMatrixArray(){
+	public int[][] getMatrixArray() {
 		return this.matrixArray;
 	}
 
 	/**
 	 * getSizeOfSquareMatrix.
 	 * The method gets the size of the square matrix from console and returns the matrix's size
+	 *
 	 * @param scan
 	 * @return int matrixSize
 	 */
 	public int getSizeOfSquareMatrix(Scanner scan) {
-		System.out.print("Enter the size of the square matrix: ");
+		System.out.print("Input a size of the square matrix: ");
 		int matrixSize = scan.nextInt();
 		return matrixSize;
 	}
@@ -54,6 +57,7 @@ public class Matrix {
 	/**
 	 * getMmatrixElements.
 	 * The method gets the elements of the square matrix from console
+	 *
 	 * @param matrix
 	 * @param scan
 	 */
@@ -70,6 +74,7 @@ public class Matrix {
 	/**
 	 * showMatrix.
 	 * The method outputs the elements of the square matrix into console
+	 *
 	 * @param matrix
 	 */
 	public void showMatrix(int[][] matrix) {
@@ -85,6 +90,7 @@ public class Matrix {
 	/**
 	 * rotateMatrix.
 	 * The method rotates the matrix on 90 degrees clockwise and returns turned matrix
+	 *
 	 * @param matrix
 	 * @return int[][] matrix
 	 */
