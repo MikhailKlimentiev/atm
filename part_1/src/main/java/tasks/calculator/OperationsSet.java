@@ -3,15 +3,23 @@ package tasks.calculator;
 import java.util.Scanner;
 
 /**
- * Calculator.
+ * OperationsSet.
  *
  * @author Mikhail Klimentsyeu
- * @version 1.0
- * @since 02/10/2018
+ * @version 2.0
+ * @since 02/11/2018
  */
-public class Calculator {
+public class OperationsSet {
 	float firstNumber;
 	float secondNumber;
+
+	/**
+	 * OperationsSet.
+	 * This method is a constructor
+	 */
+	public OperationsSet() {
+
+	}
 
 	/**
 	 * add.

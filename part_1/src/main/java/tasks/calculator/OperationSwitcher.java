@@ -6,18 +6,26 @@ import java.util.Scanner;
  * OperationSwitcher.
  *
  * @author Mikhail Klimentsyeu
- * @version 1.0
- * @since 02/10/2018
+ * @version 2.0
+ * @since 02/11/2018
  */
 public class OperationSwitcher {
 	String operation;
+
+	/**
+	 * OperationSwitcher.
+	 * This method is a constructor
+	 */
+	public OperationSwitcher() {
+
+	}
 
 	/**
 	 * switchOperation.
 	 * This method takes symbol from the console and according to the symbol selects appropriate operation
 	 */
 	public void switchOperation() {
-		Calculator calculator = new Calculator();
+		OperationsSet operationsSet = new OperationsSet();
 
 		System.out.println("The calculator can do the following operations: ");
 		System.out.println("a. 'add'");
@@ -30,19 +38,19 @@ public class OperationSwitcher {
 		this.operation = scan.nextLine();
 		switch (this.operation) {
 			case "a": {
-				calculator.add();
+				operationsSet.add();
 				break;
 			}
 			case "b": {
-				calculator.subtract();
+				operationsSet.subtract();
 				break;
 			}
 			case "c": {
-				calculator.multiply();
+				operationsSet.multiply();
 				break;
 			}
 			case "d": {
-				calculator.divide();
+				operationsSet.divide();
 				break;
 			}
 			default: {
