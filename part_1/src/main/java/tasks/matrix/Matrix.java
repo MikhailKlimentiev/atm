@@ -3,7 +3,7 @@ package tasks.matrix;
 import java.util.Scanner;
 
 /**
- * RotateMatrix.
+ * Matrix.
  *
  * @author Mikhail Klimentsyeu
  * @version 1.0
