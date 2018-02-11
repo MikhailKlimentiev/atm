@@ -10,8 +10,8 @@ import java.util.Scanner;
  * @since 02/11/2018
  */
 public class OperationsSet {
-	float firstNumber;
-	float secondNumber;
+	private float firstNumber;
+	private float secondNumber;
 
 	/**
 	 * OperationsSet.
