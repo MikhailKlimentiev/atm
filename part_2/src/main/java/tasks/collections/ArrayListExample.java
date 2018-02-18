@@ -5,32 +5,20 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-import static java.lang.Math.random;
 import static java.lang.String.format;
 
 public class ArrayListExample {
 	private List<Integer> arrayListExample;
 
-	public ArrayListExample(){
-		this.arrayListExample = new ArrayList<Integer>();
-	}
-
-	public void setArrayList(Scanner scan) {
-
-		System.out.print("Please input size of the ArrayList: ");
-		int arrayListSize = scan.nextInt();
-
-		for (int i = 0; i < arrayListSize; i++) {
+	public ArrayListExample(int capacity) {
+		this.arrayListExample = new ArrayList<Integer>(capacity);
+		for (int i = 0; i < capacity; i++) {
 			this.arrayListExample.add((new Random().nextInt()));
 		}
 	}
 
-	public List<Integer> getArrayList() {
-		return this.arrayListExample;
-	}
-
 	public void getAllArrayListElements(){
-		System.out.println("The ArrayList elements: ");
+		System.out.println("\nThe ArrayList elements: ");
 		int index = 0;
 		for (Integer element : this.arrayListExample) {
 			System.out.println(format("%d: %d", index, element));
@@ -38,18 +26,44 @@ public class ArrayListExample {
 		}
 	}
 
-	public void getArrayListElementByIndex(Scanner scan){
-		System.out.print("Please input an index of the arrayListExample element to show: ");
-		int index = scan.nextInt();
-		System.out.println(format("%d-th element of the arrayListExample: %d",
-				index, this.arrayListExample.get(index)));
+	public double addElementIntoArrayList(Scanner scan){
+		System.out.print("\nPlease input an Integer element to add into the arrayListExample: ");
+		int element = scan.nextInt();
+		double startTime = System.nanoTime();
+		this.arrayListExample.add(element);
+		double endTime = System.nanoTime();
+		System.out.println(format("\nThe element %d has been successfully added into the the arrayListExample", element));
+		System.out.println(format("The operation of adding an item into the ArrayList lasted %f nanoseconds",
+				endTime - startTime));
+		return endTime - startTime;
 	}
 
-	public void removeArrayListElementByIndex(Scanner scan){
-		System.out.print("Please input an index of the arrayListExample element to remove: ");
+	public double getArrayListElementByIndex(Scanner scan){
+		System.out.print("\nPlease input an index of the arrayListExample element to show: ");
 		int index = scan.nextInt();
-		System.out.println(format("%d-th element of the arrayListExample %d has been removed",
-				index, this.arrayListExample.remove(index)));
+		double startTime = System.nanoTime();
+		if (index >= 0 && index <= this.arrayListExample.size() - 1) {
+			System.out.println(format("\n%d-th element of the arrayListExample: %d",
+					index, this.arrayListExample.get(index)));
+		} else System.out.println("\nYou have types incorrect index");
+		double endTime = System.nanoTime();
+		System.out.println(format("The operation of getting an item from the ArrayList lasted %f nanoseconds",
+				endTime - startTime));
+		return endTime - startTime;
+	}
+
+	public double removeArrayListElementByIndex(Scanner scan){
+		System.out.print("\nPlease input an index of the arrayListExample element to remove: ");
+		int index = scan.nextInt();
+		double startTime = System.nanoTime();
+		if (index >= 0 && index <= this.arrayListExample.size() - 1) {
+			System.out.println(format("\n%d-th element of the arrayListExample %d has been removed",
+					index, this.arrayListExample.remove(index)));
+		} else System.out.println("\nYou have types incorrect index");
+		double endTime = System.nanoTime();
+		System.out.println(format("The operation of removing an item from the ArrayList lasted %f nanoseconds",
+				endTime - startTime));
+		return endTime - startTime;
 	}
 
 }
