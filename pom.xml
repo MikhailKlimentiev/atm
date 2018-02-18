@@ -15,7 +15,9 @@
 
 	<modules>
 		<module>part_1</module>
+		<module>part_2</module>
 	</modules>
+	
 	<build>
 		<plugins>
 			<plugin>
