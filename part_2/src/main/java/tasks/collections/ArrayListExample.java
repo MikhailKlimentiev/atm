@@ -2,6 +2,7 @@ package tasks.collections;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 import static java.lang.Math.random;
@@ -11,15 +12,16 @@ public class ArrayListExample {
 	private List<Integer> arrayListExample;
 
 	public ArrayListExample(){
-		List<Integer> arrayListExample = new ArrayList<Integer>();
+		this.arrayListExample = new ArrayList<Integer>();
 	}
 
 	public void setArrayList(Scanner scan) {
-		System.out.println("Please input size of the ArrayList: ");
+
+		System.out.print("Please input size of the ArrayList: ");
 		int arrayListSize = scan.nextInt();
 
 		for (int i = 0; i < arrayListSize; i++) {
-			this.arrayListExample.add((int)random()*15);
+			this.arrayListExample.add((new Random().nextInt()));
 		}
 	}
 
@@ -29,20 +31,25 @@ public class ArrayListExample {
 
 	public void getAllArrayListElements(){
 		System.out.println("The ArrayList elements: ");
-		for (Integer element : arrayListExample) {
-			int index = 0;
+		int index = 0;
+		for (Integer element : this.arrayListExample) {
 			System.out.println(format("%d: %d", index, element));
 			index++;
 		}
 	}
 
 	public void getArrayListElementByIndex(Scanner scan){
+		System.out.print("Please input an index of the arrayListExample element to show: ");
 		int index = scan.nextInt();
-		System.out.println(format("%d-th element of the arrayListExample: %d", index, arrayListExample.get(index)));
+		System.out.println(format("%d-th element of the arrayListExample: %d",
+				index, this.arrayListExample.get(index)));
 	}
 
 	public void removeArrayListElementByIndex(Scanner scan){
+		System.out.print("Please input an index of the arrayListExample element to remove: ");
 		int index = scan.nextInt();
-		System.out.println(format("%d-th element of the arrayListExample %d has been removed", index, arrayListExample.remove(index)));
+		System.out.println(format("%d-th element of the arrayListExample %d has been removed",
+				index, this.arrayListExample.remove(index)));
 	}
+
 }
