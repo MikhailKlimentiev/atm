@@ -33,8 +33,6 @@ public class ArrayListExample {
 		this.arrayListExample.add(element);
 		double endTime = System.nanoTime();
 		System.out.println(format("\nThe element %d has been successfully added into the the arrayListExample", element));
-		System.out.println(format("The operation of adding an item into the ArrayList lasted %f nanoseconds",
-				endTime - startTime));
 		return endTime - startTime;
 	}
 
@@ -47,8 +45,6 @@ public class ArrayListExample {
 					index, this.arrayListExample.get(index)));
 		} else System.out.println("\nYou have types incorrect index");
 		double endTime = System.nanoTime();
-		System.out.println(format("The operation of getting an item from the ArrayList lasted %f nanoseconds",
-				endTime - startTime));
 		return endTime - startTime;
 	}
 
@@ -61,8 +57,6 @@ public class ArrayListExample {
 					index, this.arrayListExample.remove(index)));
 		} else System.out.println("\nYou have types incorrect index");
 		double endTime = System.nanoTime();
-		System.out.println(format("The operation of removing an item from the ArrayList lasted %f nanoseconds",
-				endTime - startTime));
 		return endTime - startTime;
 	}
 
