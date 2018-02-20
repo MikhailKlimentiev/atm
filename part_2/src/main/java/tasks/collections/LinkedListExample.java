@@ -40,7 +40,7 @@ public class LinkedListExample {
 		if (index >= 0 && index <= this.linkedListExample.size() - 1) {
 			System.out.println(format("\n%d-th element of the linkedListExample: %d",
 					index, this.linkedListExample.get(index)));
-		} else System.out.println("\nYou have types incorrect index");
+		} else System.out.println("\nYou have typed incorrect index");
 		double endTime = System.nanoTime();
 		return endTime - startTime;
 	}
@@ -52,7 +52,7 @@ public class LinkedListExample {
 		if (index >= 0 && index <= this.linkedListExample.size() - 1) {
 			System.out.println(format("\n%d-th element of the linkedListExample %d has been removed",
 					index, this.linkedListExample.remove(index)));
-		} else System.out.println("\nYou have types incorrect index");
+		} else System.out.println("\nYou have typed incorrect index");
 		double endTime = System.nanoTime();
 		return endTime - startTime;
 	}

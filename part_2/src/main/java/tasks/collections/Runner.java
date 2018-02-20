@@ -8,8 +8,8 @@ public class Runner {
 		TimeComparison timeComparisonForArrayListAndLinkedList = new TimeComparison();
 		Scanner scan = new Scanner(System.in);
 
-		ArrayListExample arrayListExample = new ArrayListExample(10000);
-		LinkedListExample linkedListExample = new LinkedListExample(10000);
+		ArrayListExample arrayListExample = new ArrayListExample(15000);
+		LinkedListExample linkedListExample = new LinkedListExample(15000);
 
 		double timeForAddElementIntoArrayList = arrayListExample.addElementIntoArrayList(scan);
 		double timeForAddElementIntoLinkedList = linkedListExample.addElementIntoLinkedList(scan);

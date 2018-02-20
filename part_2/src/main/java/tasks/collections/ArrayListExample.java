@@ -43,7 +43,7 @@ public class ArrayListExample {
 		if (index >= 0 && index <= this.arrayListExample.size() - 1) {
 			System.out.println(format("\n%d-th element of the arrayListExample: %d",
 					index, this.arrayListExample.get(index)));
-		} else System.out.println("\nYou have types incorrect index");
+		} else System.out.println("\nYou have typed incorrect index");
 		double endTime = System.nanoTime();
 		return endTime - startTime;
 	}
@@ -55,7 +55,7 @@ public class ArrayListExample {
 		if (index >= 0 && index <= this.arrayListExample.size() - 1) {
 			System.out.println(format("\n%d-th element of the arrayListExample %d has been removed",
 					index, this.arrayListExample.remove(index)));
-		} else System.out.println("\nYou have types incorrect index");
+		} else System.out.println("\nYou have typed incorrect index");
 		double endTime = System.nanoTime();
 		return endTime - startTime;
 	}
