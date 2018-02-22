@@ -2,7 +2,22 @@ package tasks.collections;
 
 import static java.lang.String.format;
 
+/**
+ * TimeComparison.
+ *
+ * @author Mikhail Klimentsyeu
+ * @version 1.0
+ * @since 02/22/2018
+ */
 public class TimeComparison {
+
+	/**
+	 * compareArrayListAndLinkedListAddingElement.
+	 * The method compareArrayListAndLinkedListAddingElement compares adding elements time into ArrayList and LinkedList
+	 * and prints result in console
+	 * @param timeForAddingElementIntoArrayList
+	 * @param timeForAddingElementIntoLinkedList
+	 */
 	public void compareArrayListAndLinkedListAddingElement(double timeForAddingElementIntoArrayList,
 	                                                       double timeForAddingElementIntoLinkedList) {
 		if (timeForAddingElementIntoArrayList < timeForAddingElementIntoLinkedList) {
@@ -20,6 +35,13 @@ public class TimeComparison {
 		}
 	}
 
+	/**
+	 * compareArrayListAndLinkedListGettingElement.
+	 * The method compareArrayListAndLinkedListGettingElement compares getting elements time from ArrayList and LinkedList
+	 * and prints result in console
+	 * @param timeForGettingElementFromArrayList
+	 * @param timeForGettingElementFromLinkedList
+	 */
 	public void compareArrayListAndLinkedListGettingElement(double timeForGettingElementFromArrayList,
 	                                                        double timeForGettingElementFromLinkedList) {
 		if (timeForGettingElementFromArrayList < timeForGettingElementFromLinkedList) {
@@ -37,6 +59,13 @@ public class TimeComparison {
 		}
 	}
 
+	/**
+	 * compareArrayListAndLinkedListRemovingElement.
+	 * The method compareArrayListAndLinkedListRemovingElement compares removing elements time into ArrayList and LinkedList
+	 * and prints result in console
+	 * @param timeForRemovingElementFromArrayList
+	 * @param timeForRemovingElementFromLinkedList
+	 */
 	public void compareArrayListAndLinkedListRemovingElement(double timeForRemovingElementFromArrayList,
 	                                                         double timeForRemovingElementFromLinkedList) {
 		if (timeForRemovingElementFromArrayList < timeForRemovingElementFromLinkedList) {

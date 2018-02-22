@@ -7,9 +7,21 @@ import java.util.Scanner;
 
 import static java.lang.String.format;
 
+/**
+ * ArrayListExample.
+ *
+ * @author Mikhail Klimentsyeu
+ * @version 1.0
+ * @since 02/22/2018
+ */
 public class ArrayListExample {
 	private List<Integer> arrayListExample;
 
+	/**
+	 * ArrayListExample.
+	 * The method ArrayListExample(int capacity) is a constructor
+	 * @param capacity
+	 */
 	public ArrayListExample(int capacity) {
 		this.arrayListExample = new ArrayList<Integer>(capacity);
 		for (int i = 0; i < capacity; i++) {
@@ -17,6 +29,10 @@ public class ArrayListExample {
 		}
 	}
 
+	/**
+	 * getAllArrayListElements.
+	 * The method getAllArrayListElements() prints ArrayList elements in console
+	 */
 	public void getAllArrayListElements(){
 		System.out.println("\nThe ArrayList elements: ");
 		int index = 0;
@@ -26,6 +42,12 @@ public class ArrayListExample {
 		}
 	}
 
+	/**
+	 * addElementIntoArrayList.
+	 * The method addElementIntoArrayList(Scanner scan) counts adding elements time into ArrayList
+	 * @param scan
+	 * @return double (endTime - startTime)
+	 */
 	public double addElementIntoArrayList(Scanner scan){
 		System.out.print("\nPlease input an Integer element to add into the arrayListExample: ");
 		int element = scan.nextInt();
@@ -36,6 +58,12 @@ public class ArrayListExample {
 		return endTime - startTime;
 	}
 
+	/**
+	 * getArrayListElementByIndex.
+	 * The method getArrayListElementByIndex(Scanner scan) counts getting elements time from ArrayList
+	 * @param scan
+	 * @return double (endTime - startTime)
+	 */
 	public double getArrayListElementByIndex(Scanner scan){
 		System.out.print("\nPlease input an index of the arrayListExample element to show: ");
 		int index = scan.nextInt();
@@ -48,6 +76,12 @@ public class ArrayListExample {
 		return endTime - startTime;
 	}
 
+	/**
+	 * removeArrayListElementByIndex.
+	 * The method removeArrayListElementByIndex(Scanner scan) counts removing elements time into ArrayList
+	 * @param scan
+	 * @return double (endTime - startTime)
+	 */
 	public double removeArrayListElementByIndex(Scanner scan){
 		System.out.print("\nPlease input an index of the arrayListExample element to remove: ");
 		int index = scan.nextInt();

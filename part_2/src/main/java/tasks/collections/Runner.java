@@ -2,7 +2,13 @@ package tasks.collections;
 
 import java.util.Scanner;
 
-
+/**
+ * Runner.
+ *
+ * @author Mikhail Klimentsyeu
+ * @version 1.0
+ * @since 02/22/2018
+ */
 public class Runner {
 	public static void main(String[] args) {
 		TimeComparison timeComparisonForArrayListAndLinkedList = new TimeComparison();
