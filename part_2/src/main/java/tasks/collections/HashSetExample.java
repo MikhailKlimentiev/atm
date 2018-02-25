@@ -52,7 +52,7 @@ public class HashSetExample implements Insertable, Printable, Derivable, Removab
 	@Override
 	public double countTimeAddingElement(Scanner scan) {
 		System.out.print("\nPlease input String element to add into the hashSetExample: ");
-		String element = scan.nextLine();
+		String element = scan.next();
 		double startTime = System.nanoTime();
 		this.hashSetExample.add(element);
 		double endTime = System.nanoTime();
