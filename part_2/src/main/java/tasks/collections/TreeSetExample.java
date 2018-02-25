@@ -56,7 +56,7 @@ public class TreeSetExample implements Insertable, Printable, Derivable, Removab
 		double startTime = System.nanoTime();
 		this.treeSetExample.add(element);
 		double endTime = System.nanoTime();
-		System.out.println(format("\nThe element %s has been successfully added into the the treeSetExample", element));
+		System.out.println(format("\nThe element %s has been successfully added into the treeSetExample", element));
 		return endTime - startTime;
 	}
 

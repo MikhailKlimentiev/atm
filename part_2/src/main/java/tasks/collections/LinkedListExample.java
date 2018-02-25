@@ -51,12 +51,12 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 	 */
 	@Override
 	public double countTimeAddingElement(Scanner scan) {
-		System.out.print("\nPlease input an Integer element to add into the linkedListExample: ");
+		System.out.print("\nPlease input Integer element to add into the linkedListExample: ");
 		int element = scan.nextInt();
 		double startTime = System.nanoTime();
 		this.linkedListExample.add(element);
 		double endTime = System.nanoTime();
-		System.out.println(format("\nThe element %d has been successfully added into the the linkedListExample", element));
+		System.out.println(format("\nThe element %d has been successfully added into the linkedListExample", element));
 		return endTime - startTime;
 	}
 

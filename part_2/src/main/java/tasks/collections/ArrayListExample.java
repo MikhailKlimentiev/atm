@@ -54,12 +54,12 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 	 */
 	@Override
 	public double countTimeAddingElement(Scanner scan) {
-		System.out.print("\nPlease input an Integer element to add into the arrayListExample: ");
+		System.out.print("\nPlease input Integer element to add into the arrayListExample: ");
 		int element = scan.nextInt();
 		double startTime = System.nanoTime();
 		this.arrayListExample.add(element);
 		double endTime = System.nanoTime();
-		System.out.println(format("\nThe element %d has been successfully added into the the arrayListExample", element));
+		System.out.println(format("\nThe element %d has been successfully added into the arrayListExample", element));
 		return endTime - startTime;
 	}
 

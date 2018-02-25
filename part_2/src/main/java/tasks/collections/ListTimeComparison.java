@@ -56,7 +56,7 @@ public class ListTimeComparison implements Comparative {
 			System.out.println(format("\nTime has been spent for getting an element from ArrayList is %f",
 					timeGettingElementFromArrayList));
 			System.out.println(format("Time has been spent for getting an element from LinkedList is %f",
-					timeGettingElementFromArrayList));
+					timeGettingElementFromLinkedList));
 			System.out.println("The operation of getting an element from the LinkedList is faster than from the ArrayList");
 		}
 	}
