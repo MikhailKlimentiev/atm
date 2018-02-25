@@ -14,6 +14,7 @@ public class ListTimeComparison implements Comparative {
 	/**
 	 * compareTimeAddingElement.
 	 * compareTimeAddingElement() method compares time of adding element between ArrayList and LinkedList
+	 *
 	 * @param timeAddingElementIntoArrayList
 	 * @param timeAddingElementIntoLinkedList
 	 */
@@ -38,6 +39,7 @@ public class ListTimeComparison implements Comparative {
 	/**
 	 * compareTimeGettingElement.
 	 * compareTimeGettingElement() method compares time of getting element from ArrayList and LinkedList
+	 *
 	 * @param timeGettingElementFromArrayList
 	 * @param timeGettingElementFromLinkedList
 	 */
@@ -49,19 +51,20 @@ public class ListTimeComparison implements Comparative {
 					timeGettingElementFromArrayList));
 			System.out.println(format("Time has been spent for getting an element from LinkedList is %f",
 					timeGettingElementFromLinkedList));
-			System.out.println("The operation of getting an element into the ArrayList is faster than into the LinkedList");
+			System.out.println("The operation of getting an element from the ArrayList is faster than from the LinkedList");
 		} else {
 			System.out.println(format("\nTime has been spent for getting an element from ArrayList is %f",
 					timeGettingElementFromArrayList));
 			System.out.println(format("Time has been spent for getting an element from LinkedList is %f",
 					timeGettingElementFromArrayList));
-			System.out.println("The operation of getting an element from the LinkedList is faster than into the ArrayList");
+			System.out.println("The operation of getting an element from the LinkedList is faster than from the ArrayList");
 		}
 	}
 
 	/**
 	 * compareTimeRemovingElement.
 	 * compareTimeRemovingElement() method compares time of removing element from ArrayList and LinkedList
+	 *
 	 * @param timeRemovingElementInArrayList
 	 * @param timeRemovingElementInLinkedList
 	 */
@@ -73,13 +76,13 @@ public class ListTimeComparison implements Comparative {
 					timeRemovingElementInArrayList));
 			System.out.println(format("Time has been spent for removing an element in LinkedList is %f",
 					timeRemovingElementInLinkedList));
-			System.out.println("The operation of removing an element from the ArrayList is faster than into the LinkedList");
+			System.out.println("The operation of removing an element in the ArrayList is faster than in the LinkedList");
 		} else {
 			System.out.println(format("\nTime has been spent for removing an element in ArrayList is %f",
 					timeRemovingElementInArrayList));
 			System.out.println(format("Time has been spent for removing an element in LinkedList is %f",
 					timeRemovingElementInLinkedList));
-			System.out.println("The operation of removing an element from the LinkedList is faster than into the ArrayList");
+			System.out.println("The operation of removing an element in the LinkedList is faster than in the ArrayList");
 		}
 	}
 }

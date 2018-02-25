@@ -18,6 +18,7 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 	/**
 	 * LinkedListExample.
 	 * LinkedListExample() method is a constructor
+	 *
 	 * @param capacity
 	 */
 	public LinkedListExample(int capacity) {
@@ -44,6 +45,7 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 	/**
 	 * countTimeAddingElement.
 	 * countTimeAddingElement() method counts time of adding an element into collection
+	 *
 	 * @param scan
 	 * @return (endTime - startTime)
 	 */
@@ -61,6 +63,7 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 	/**
 	 * countTimeGettingElement.
 	 * countTimeGettingElement() method counts time of getting an element from collection
+	 *
 	 * @param scan
 	 * @return (endTime - startTime)
 	 */
@@ -80,6 +83,7 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 	/**
 	 * countTimeRemovingElement.
 	 * countTimeRemovingElement() method counts time of removing an element in collection
+	 *
 	 * @param scan
 	 * @return (endTime - startTime)
 	 */

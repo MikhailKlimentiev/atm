@@ -6,8 +6,8 @@ public class Runner {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 
-		ArrayListExample arrayListExample = new ArrayListExample(20000);
-		LinkedListExample linkedListExample = new LinkedListExample(20000);
+		ArrayListExample arrayListExample = new ArrayListExample(15000);
+		LinkedListExample linkedListExample = new LinkedListExample(15000);
 		ListTimeComparison listTimeComparison = new ListTimeComparison();
 
 		double timeAddingElementIntoArrayList = arrayListExample.countTimeAddingElement(scan);

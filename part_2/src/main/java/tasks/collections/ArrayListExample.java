@@ -21,6 +21,7 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 	/**
 	 * ArrayListExample.
 	 * ArrayListExample() method is a constructor
+	 *
 	 * @param capacity
 	 */
 	public ArrayListExample(int capacity) {
@@ -47,6 +48,7 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 	/**
 	 * countTimeAddingElement.
 	 * countTimeAddingElement() method counts time of adding an element into collection
+	 *
 	 * @param scan
 	 * @return (endTime - startTime)
 	 */
@@ -64,6 +66,7 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 	/**
 	 * countTimeGettingElement.
 	 * countTimeGettingElement() method counts time of getting an element from collection
+	 *
 	 * @param scan
 	 * @return (endTime - startTime)
 	 */
@@ -83,6 +86,7 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 	/**
 	 * countTimeRemovingElement.
 	 * countTimeRemovingElement() method counts time of removing an element in collection
+	 *
 	 * @param scan
 	 * @return (endTime - startTime)
 	 */
