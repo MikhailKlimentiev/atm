@@ -30,7 +30,7 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 
 	/**
 	 * printAllElements.
-	 * printAllElements() method prints in console all elements of a collection
+	 * printAllElements() method prints in console all elements of LinkedList
 	 */
 	@Override
 	public void printAllElements() {
@@ -44,7 +44,7 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 
 	/**
 	 * countTimeAddingElement.
-	 * countTimeAddingElement() method counts time of adding an element into collection
+	 * countTimeAddingElement() method counts time of adding an element into LinkedList
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -62,7 +62,7 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 
 	/**
 	 * countTimeGettingElement.
-	 * countTimeGettingElement() method counts time of getting an element from collection
+	 * countTimeGettingElement() method counts time of getting an element from LinkedList
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -82,7 +82,7 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 
 	/**
 	 * countTimeRemovingElement.
-	 * countTimeRemovingElement() method counts time of removing an element in collection
+	 * countTimeRemovingElement() method counts time of removing an element in LinkedList
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)

@@ -38,7 +38,7 @@ public class ListTimeComparison implements Comparative {
 
 	/**
 	 * compareTimeGettingElement.
-	 * compareTimeGettingElement() method compares time of getting element from ArrayList and LinkedList
+	 * compareTimeGettingElement() method compares time of getting element between ArrayList and LinkedList
 	 *
 	 * @param timeGettingElementFromArrayList
 	 * @param timeGettingElementFromLinkedList
@@ -63,7 +63,7 @@ public class ListTimeComparison implements Comparative {
 
 	/**
 	 * compareTimeRemovingElement.
-	 * compareTimeRemovingElement() method compares time of removing element from ArrayList and LinkedList
+	 * compareTimeRemovingElement() method compares time of removing element between ArrayList and LinkedList
 	 *
 	 * @param timeRemovingElementInArrayList
 	 * @param timeRemovingElementInLinkedList

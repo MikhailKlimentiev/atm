@@ -30,7 +30,7 @@ public class HashSetExample implements Insertable, Printable, Derivable, Removab
 
 	/**
 	 * printAllElements.
-	 * printAllElements() method prints in console all elements of a collection
+	 * printAllElements() method prints in console all elements of HashSet
 	 */
 	@Override
 	public void printAllElements() {
@@ -44,7 +44,7 @@ public class HashSetExample implements Insertable, Printable, Derivable, Removab
 
 	/**
 	 * countTimeAddingElement.
-	 * countTimeAddingElement() method counts time of adding an element into collection
+	 * countTimeAddingElement() method counts time of adding an element into HashSet
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -62,7 +62,7 @@ public class HashSetExample implements Insertable, Printable, Derivable, Removab
 
 	/**
 	 * countTimeGettingElement.
-	 * countTimeGettingElement() method counts time of getting an element from collection
+	 * countTimeGettingElement() method counts time of getting an element from HashSet
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -90,7 +90,7 @@ public class HashSetExample implements Insertable, Printable, Derivable, Removab
 
 	/**
 	 * countTimeRemovingElement.
-	 * countTimeRemovingElement() method counts time of removing an element in collection
+	 * countTimeRemovingElement() method counts time of removing an element in HashSet
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)

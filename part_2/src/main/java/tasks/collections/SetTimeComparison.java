@@ -38,7 +38,7 @@ public class SetTimeComparison implements Comparative {
 
 	/**
 	 * compareTimeGettingElement.
-	 * compareTimeGettingElement() method compares time of getting element from ArrayList and LinkedList
+	 * compareTimeGettingElement() method compares time of getting element between HashSet and TreeSet
 	 *
 	 * @param timeGettingElementFromHashSet
 	 * @param timeGettingElementFromTreeSet
@@ -63,7 +63,7 @@ public class SetTimeComparison implements Comparative {
 
 	/**
 	 * compareTimeRemovingElement.
-	 * compareTimeRemovingElement() method compares time of removing element from ArrayList and LinkedList
+	 * compareTimeRemovingElement() method compares time of removing element between HashSet and TreeSet
 	 *
 	 * @param timeRemovingElementInHashSet
 	 * @param timeRemovingElementInTreeSet

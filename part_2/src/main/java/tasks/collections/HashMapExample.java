@@ -2,13 +2,6 @@ package tasks.collections;
 
 import java.util.*;
 
-/**
- * HashMapExample.
- *
- * @author Mikhail Klimentsyeu
- * @version 2.0
- * @since 02/24/2018
- */
 import static java.lang.String.format;
 
 /**
@@ -37,7 +30,7 @@ public class HashMapExample implements Printable, Insertable, Derivable, Removab
 
 	/**
 	 * printAllElements.
-	 * printAllElements() method prints in console all elements of a collection
+	 * printAllElements() method prints in console all elements of HashMap
 	 */
 	@Override
 	public void printAllElements() {
@@ -49,7 +42,7 @@ public class HashMapExample implements Printable, Insertable, Derivable, Removab
 
 	/**
 	 * countTimeAddingElement.
-	 * countTimeAddingElement() method counts time of adding an element into collection
+	 * countTimeAddingElement() method counts time of adding an element into HashMap
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -63,14 +56,14 @@ public class HashMapExample implements Printable, Insertable, Derivable, Removab
 		double startTime = System.nanoTime();
 		this.hashMapExample.put(key, value);
 		double endTime = System.nanoTime();
-		System.out.println(format("\nThe key %d and the value %s has been successfully added into the the hashMapExample",
+		System.out.println(format("\nThe key %d and the value '%s' has been successfully added into the the hashMapExample",
 				key, value));
 		return endTime - startTime;
 	}
 
 	/**
 	 * countTimeGettingElement.
-	 * countTimeGettingElement() method counts time of getting an element from collection
+	 * countTimeGettingElement() method counts time of getting an element from HashMap
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -81,7 +74,7 @@ public class HashMapExample implements Printable, Insertable, Derivable, Removab
 		Integer key = scan.nextInt();
 		double startTime = System.nanoTime();
 		if (key >= 0 && key <= this.hashMapExample.size() - 1) {
-			System.out.println(format("\nKey: %d Value: %s of the hashMapExample", key, this.hashMapExample.get(key)));
+			System.out.println(format("\nKey: %d Value: '%s' of the hashMapExample", key, this.hashMapExample.get(key)));
 		} else {
 			System.out.println("\nYou have typed incorrect index");
 		}
@@ -91,7 +84,7 @@ public class HashMapExample implements Printable, Insertable, Derivable, Removab
 
 	/**
 	 * countTimeRemovingElement.
-	 * countTimeRemovingElement() method counts time of removing an element in collection
+	 * countTimeRemovingElement() method counts time of removing an element in HashMap
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)

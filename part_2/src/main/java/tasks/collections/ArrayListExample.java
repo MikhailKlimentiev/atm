@@ -33,7 +33,7 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 
 	/**
 	 * printAllElements.
-	 * printAllElements() method prints in console all elements of a collection
+	 * printAllElements() method prints in console all elements of ArrayList
 	 */
 	@Override
 	public void printAllElements() {
@@ -47,7 +47,7 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 
 	/**
 	 * countTimeAddingElement.
-	 * countTimeAddingElement() method counts time of adding an element into collection
+	 * countTimeAddingElement() method counts time of adding an element into ArrayList
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -65,7 +65,7 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 
 	/**
 	 * countTimeGettingElement.
-	 * countTimeGettingElement() method counts time of getting an element from collection
+	 * countTimeGettingElement() method counts time of getting an element from ArrayList
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -85,7 +85,7 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 
 	/**
 	 * countTimeRemovingElement.
-	 * countTimeRemovingElement() method counts time of removing an element in collection
+	 * countTimeRemovingElement() method counts time of removing an element in ArrayList
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)

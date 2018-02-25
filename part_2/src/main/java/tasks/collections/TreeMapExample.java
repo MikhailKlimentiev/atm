@@ -30,7 +30,7 @@ public class TreeMapExample implements Printable, Insertable, Derivable, Removab
 
 	/**
 	 * printAllElements.
-	 * printAllElements() method prints in console all elements of a collection
+	 * printAllElements() method prints in console all elements of TreeMap
 	 */
 	@Override
 	public void printAllElements() {
@@ -42,7 +42,7 @@ public class TreeMapExample implements Printable, Insertable, Derivable, Removab
 
 	/**
 	 * countTimeAddingElement.
-	 * countTimeAddingElement() method counts time of adding an element into collection
+	 * countTimeAddingElement() method counts time of adding an element into TreeMap
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -56,14 +56,14 @@ public class TreeMapExample implements Printable, Insertable, Derivable, Removab
 		double startTime = System.nanoTime();
 		this.treeMapExample.put(key, value);
 		double endTime = System.nanoTime();
-		System.out.println(format("\nThe key %d and the value %s has been successfully added into the the treeMapExample",
+		System.out.println(format("\nThe key %d and the value '%s' has been successfully added into the the treeMapExample",
 				key, value));
 		return endTime - startTime;
 	}
 
 	/**
 	 * countTimeGettingElement.
-	 * countTimeGettingElement() method counts time of getting an element from collection
+	 * countTimeGettingElement() method counts time of getting an element from TreeMap
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -74,7 +74,7 @@ public class TreeMapExample implements Printable, Insertable, Derivable, Removab
 		Integer key = scan.nextInt();
 		double startTime = System.nanoTime();
 		if (key >= 0 && key <= this.treeMapExample.size() - 1) {
-			System.out.println(format("\nKey: %d Value: %s of the treeMapExample", key, this.treeMapExample.get(key)));
+			System.out.println(format("\nKey: %d Value: '%s' of the treeMapExample", key, this.treeMapExample.get(key)));
 		} else {
 			System.out.println("\nYou have typed incorrect index");
 		}
@@ -84,7 +84,7 @@ public class TreeMapExample implements Printable, Insertable, Derivable, Removab
 
 	/**
 	 * countTimeRemovingElement.
-	 * countTimeRemovingElement() method counts time of removing an element in collection
+	 * countTimeRemovingElement() method counts time of removing an element in TreeMap
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -95,7 +95,7 @@ public class TreeMapExample implements Printable, Insertable, Derivable, Removab
 		Integer key = scan.nextInt();
 		double startTime = System.nanoTime();
 		if (key >= 0 && key <= this.treeMapExample.size() - 1) {
-			System.out.println(format("\nKey: %d Value: %s of the treeMapExample has been removed",
+			System.out.println(format("\nKey: %d Value: '%s' of the treeMapExample has been removed",
 					key, this.treeMapExample.remove(key)));
 		} else {
 			System.out.println("\nYou have typed incorrect index");

@@ -30,7 +30,7 @@ public class TreeSetExample implements Insertable, Printable, Derivable, Removab
 
 	/**
 	 * printAllElements.
-	 * printAllElements() method prints in console all elements of a collection
+	 * printAllElements() method prints in console all elements of TreeSet
 	 */
 	@Override
 	public void printAllElements() {
@@ -44,7 +44,7 @@ public class TreeSetExample implements Insertable, Printable, Derivable, Removab
 
 	/**
 	 * countTimeAddingElement.
-	 * countTimeAddingElement() method counts time of adding an element into collection
+	 * countTimeAddingElement() method counts time of adding an element into TreeSet
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -62,7 +62,7 @@ public class TreeSetExample implements Insertable, Printable, Derivable, Removab
 
 	/**
 	 * countTimeGettingElement.
-	 * countTimeGettingElement() method counts time of getting an element from collection
+	 * countTimeGettingElement() method counts time of getting an element from TreeSet
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -90,7 +90,7 @@ public class TreeSetExample implements Insertable, Printable, Derivable, Removab
 
 	/**
 	 * countTimeRemovingElement.
-	 * countTimeRemovingElement() method counts time of removing an element in collection
+	 * countTimeRemovingElement() method counts time of removing an element in TreeSet
 	 *
 	 * @param scan
 	 * @return (endTime - startTime)
@@ -104,7 +104,7 @@ public class TreeSetExample implements Insertable, Printable, Derivable, Removab
 		for (int index = 0; iterator.hasNext(); index++, iterator.next()) {
 			if (indexFromUser >= 0 && indexFromUser <= this.treeSetExample.size() - 1) {
 				if (index == indexFromUser) {
-					String elementToRemove = (String)iterator.next();
+					String elementToRemove = (String) iterator.next();
 					System.out.println(format("\n%d-th element of the treeSetExample %s has been removed", index,
 							elementToRemove, treeSetExample.remove(elementToRemove)));
 					break;
