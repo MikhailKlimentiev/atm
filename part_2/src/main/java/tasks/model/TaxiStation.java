@@ -12,25 +12,30 @@ public class TaxiStation {
 		int sumCostOfVehicles = 0;
 		for (Vehicle vehicle : taxiStation) {
 			int vehicleCost = vehicle.getCost();
-			sumCostOfVehicles = vehicleCost + vehicleCost;
+			sumCostOfVehicles = sumCostOfVehicles + vehicleCost;
 		}
 		System.out.println("Cost of the vehicle fleet is " + sumCostOfVehicles);
 	}
 
 	public void searchCarByParameters(List<Vehicle> taxiStation, Scanner scan) {
-		System.out.println("Please input type of a car: ");
+		System.out.print("Please input type of a car: ");
 		String carType = scan.next();
-		System.out.println("Please input model of a car: ");
-		String carModel = scan.next();
-		System.out.println("Please input transmission type of a car: ");
+		scan.nextLine();
+		System.out.print("Please input model of a car: ");
+		String carModel = scan.nextLine();
+		System.out.print("Please input transmission type of a car: ");
 		String carTransmissionType = scan.next();
+		System.out.print("Please input minimum year of manufacture of a car: ");
+		int yearOfManufacture = scan.nextInt();
 
 		List<Vehicle> suitableCars = new ArrayList();
+		int count = 0;
 		for (Vehicle vehicle : taxiStation) {
 			if (carType.equals(vehicle.getType())) {
-				if(carModel.equals(vehicle.getModel())) {
+				if (carModel.equals(vehicle.getModel())) {
 					if (carTransmissionType.equals(vehicle.getTransmission())) {
-						suitableCars.add(vehicle);
+						if (yearOfManufacture <= vehicle.getYearOfManufacture())
+							suitableCars.add(vehicle);
 					} else {
 						break;
 					}
@@ -41,15 +46,14 @@ public class TaxiStation {
 				break;
 			}
 		}
-		if (suitableCars.size() == 0) {
-			System.out.println("Unfortunately there is no a car with such parameters");
-		} else {
+		if (suitableCars.size() != 0) {
 			System.out.println("The cars below are suitable for you: ");
-			int count = 0;
 			for (Vehicle suitableCar : suitableCars) {
-				System.out.println(count++);
+				System.out.print(++count + ". ");
 				suitableCar.drive();
 			}
+		} else {
+			System.out.println("Unfortunately there is no a car with such parameters");
 		}
 	}
 }

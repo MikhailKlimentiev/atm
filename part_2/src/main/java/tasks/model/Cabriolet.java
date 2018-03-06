@@ -4,8 +4,9 @@ public class Cabriolet extends Vehicle implements Modifiable {
 
 	public boolean topRaised = true;
 
-	public Cabriolet(String type, String model, String transmission, double lpk, int cost, int numberOfSeats, boolean topRaised) {
-		super(type, model, transmission, lpk, cost, numberOfSeats);
+	public Cabriolet(String type, String model, String transmission, double litresPerHudredKm, int cost,
+	                 int numberOfSeats, int yearOfManufacture, boolean topRaised) {
+		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture);
 		this.topRaised = topRaised;
 	}
 

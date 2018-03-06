@@ -2,8 +2,9 @@ package tasks.model;
 
 public class Truck extends Vehicle implements Loaded, Passable{
 
-	public Truck(String type, String model, String transmission, double lpk, int cost, int numberOfSeats) {
-		super(type, model, transmission, lpk, cost, numberOfSeats);
+	public Truck(String type, String model, String transmission, double litresPerHudredKm, int cost,
+	             int numberOfSeats, int yearOfManufacture) {
+		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture);
 	}
 
 	@Override
@@ -24,6 +25,6 @@ public class Truck extends Vehicle implements Loaded, Passable{
 
 	@Override
 	public void driveOffRoad() {
-		System.out.println("On " +super.getModel() + " you can drive off-road");
+		System.out.println("On " + super.getModel() + " you can drive off-road");
 	}
 }
