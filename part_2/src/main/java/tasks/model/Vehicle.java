@@ -78,10 +78,10 @@ public abstract class Vehicle {
 	public abstract void inform();
 
 	public void drive() {
-		System.out.println(getModel() + " which has: " +
-				" 1) transmission: " + getTransmission() + ";" +
-				" 2) fuel consumption on l/100 km: " + getYearOfManufacture() + ";" +
-				" 3) number of seats: " + getNumberOfSeats() + ";" +
-				" 4) year of manufacture: " + getYearOfManufacture() + ";");
+		System.out.println("\"" + getModel() + "\"" + " which has:" +
+				" | #Transmission: " + getTransmission() +
+				" | #Fuel consumption on l/100 km: " + getLitresPerHudredKm() +
+				" | #Number of seats: " + getNumberOfSeats() +
+				" | #Year of manufacture: " + getYearOfManufacture());
 	}
 }

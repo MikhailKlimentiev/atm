@@ -1,6 +1,7 @@
 package tasks.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class Runner {
 
 		Vehicle bmw3Series = new Sedan("Sedan","BMW 3 series", "Automatic", 8.71,
 				40250, 5, 2013);
-		Vehicle bmw4Series = new Sedan("Sedan","BMW 3 series", "Automatic", 8.71,
+		Vehicle bmw4Series = new Sedan("Sedan","BMW 3 series", "Automatic", 8.70,
 				40350, 5, 2015);
 		bmw3Series.getNumberOfSeats();
 		bmw3Series.getLitresPerHudredKm();
@@ -26,8 +27,19 @@ public class Runner {
 		autopark.add(bmw3Series);
 		autopark.add(bmw4Series);
 
+//		TaxiStation taxiStation = new TaxiStation();
+//		taxiStation.searchCarByParameters(autopark, scan);
+
 		TaxiStation taxiStation = new TaxiStation();
-		taxiStation.searchCarByParameters(autopark, scan);
+		taxiStation.calculateCost(autopark);
+
+//		Collections.sort(autopark, new FuelConsumptionComparator());
+//		System.out.println("Order of cars in the Taxi Station on fuel consumption :");
+//		for (Vehicle car : autopark) {
+//			car.drive();
+//		}
+
+		taxiStation.printAllCars(autopark);
 
 
 

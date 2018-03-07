@@ -14,14 +14,14 @@ public class TaxiStation {
 			int vehicleCost = vehicle.getCost();
 			sumCostOfVehicles = sumCostOfVehicles + vehicleCost;
 		}
-		System.out.println("Cost of the vehicle fleet is " + sumCostOfVehicles);
+		System.out.println("Cost of the Taxi Station is " + sumCostOfVehicles);
 	}
 
 	public void searchCarByParameters(List<Vehicle> taxiStation, Scanner scan) {
 		System.out.print("Please input type of a car: ");
 		String carType = scan.next();
 		scan.nextLine();
-		System.out.print("Please input model of a car: ");
+		System.out.print("Please input brand or model of a car: ");
 		String carModel = scan.nextLine();
 		System.out.print("Please input transmission type of a car: ");
 		String carTransmissionType = scan.next();
@@ -31,9 +31,9 @@ public class TaxiStation {
 		List<Vehicle> suitableCars = new ArrayList();
 		int count = 0;
 		for (Vehicle vehicle : taxiStation) {
-			if (carType.equals(vehicle.getType())) {
-				if (carModel.equals(vehicle.getModel())) {
-					if (carTransmissionType.equals(vehicle.getTransmission())) {
+			if (carType.equalsIgnoreCase(vehicle.getType())) {
+				if (vehicle.getModel().contains(carModel)) {
+					if (carTransmissionType.equalsIgnoreCase(vehicle.getTransmission())) {
 						if (yearOfManufacture <= vehicle.getYearOfManufacture())
 							suitableCars.add(vehicle);
 					} else {
@@ -54,6 +54,15 @@ public class TaxiStation {
 			}
 		} else {
 			System.out.println("Unfortunately there is no a car with such parameters");
+		}
+	}
+
+	public void printAllCars(List<Vehicle> taxiStation) {
+		System.out.println("All cars of the Taxi Station: ");
+		int count = 0;
+		for (Vehicle car : taxiStation){
+			System.out.print(++count + ". ");
+			car.drive();
 		}
 	}
 }
