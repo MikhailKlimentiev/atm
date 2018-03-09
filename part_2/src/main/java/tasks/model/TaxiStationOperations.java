@@ -4,8 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * TaxiStationOperations.
+ *
+ * @author Mikhail Klimentsyeu
+ * @version 1.0
+ * @since 03/09/2018
+ */
 public class TaxiStationOperations {
 
+	/**
+	 * calculateCost.
+	 * calculateCost() method gets collection of cars, calculates cost of all collecton's objects and prints
+	 * result in console
+	 *
+	 * @param taxiStation
+	 */
 	public void calculateCost(List<Vehicle> taxiStation) {
 		int sumCostOfVehicles = 0;
 		for (Vehicle vehicle : taxiStation) {
@@ -15,6 +29,15 @@ public class TaxiStationOperations {
 		System.out.println("\nCost of the Taxi Station is " + sumCostOfVehicles + "$");
 	}
 
+	/**
+	 * searchCarByParameters.
+	 * searchCarByParameters() method gets collection of cars, gets values of car type, car model, transmission type,
+	 * minimum year of car's manufacture from console, finds appropriate car's objects by getting parameters,
+	 * creates collection with these objects and prints all these selected objects in console.
+	 *
+	 * @param taxiStation
+	 * @param scan
+	 */
 	public void searchCarByParameters(List<Vehicle> taxiStation, Scanner scan) {
 		System.out.println("\nPlease select an appropriate car by car's type, car's brand, transmission type and minimum " +
 				"year of car's manufacture");
@@ -128,6 +151,12 @@ public class TaxiStationOperations {
 		}
 	}
 
+	/**
+	 * printAllCars.
+	 * printAllCars() method gets collection of cars and prints all car's objects from this collection in console
+	 *
+	 * @param taxiStation
+	 */
 	public void printAllCars(List<Vehicle> taxiStation) {
 		System.out.println("All cars of the Taxi Station: ");
 		int count = 0;

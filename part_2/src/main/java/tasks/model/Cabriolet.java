@@ -2,6 +2,13 @@ package tasks.model;
 
 import java.util.Scanner;
 
+/**
+ * Cabriolet.
+ *
+ * @author Mikhail Klimentsyeu
+ * @version 1.0
+ * @since 03/09/2018
+ */
 public class Cabriolet extends Vehicle implements Modifiable {
 
 	public boolean topRaised;
@@ -12,6 +19,10 @@ public class Cabriolet extends Vehicle implements Modifiable {
 		this.topRaised = topRaised;
 	}
 
+	/**
+	 * inform.
+	 * inform() method overrides abstract method from Vehicle class and prints information what cabriolet is in console
+	 */
 	@Override
 	public void inform() {
 		System.out.println("About " + super.type + ":\n" +
@@ -22,6 +33,13 @@ public class Cabriolet extends Vehicle implements Modifiable {
 				"and visibility suffers with the top up relative to comparable vehicles with fixed roofs.");
 	}
 
+	/**
+	 * liftRoof.
+	 * liftRoof() method overrides abstract method from Modifiable interface,
+	 * checks and changes value of topRaised variable
+	 *
+	 * @param scan
+	 */
 	@Override
 	public void liftRoof(Scanner scan) {
 		boolean condition = true;
@@ -46,6 +64,13 @@ public class Cabriolet extends Vehicle implements Modifiable {
 		}
 	}
 
+	/**
+	 * lowerRoof.
+	 * lowerRoof() method overrides abstract method from Modifiable interface,
+	 * checks and changes value of topRaised variable
+	 *
+	 * @param scan
+	 */
 	@Override
 	public void lowerRoof(Scanner scan) {
 		boolean condition = true;

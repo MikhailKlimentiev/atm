@@ -1,12 +1,23 @@
 package tasks.model;
 
-public class Truck extends Vehicle implements Loaded, Passable{
+/**
+ * Truck.
+ *
+ * @author Mikhail Klimentsyeu
+ * @version 1.0
+ * @since 03/09/2018
+ */
+public class Truck extends Vehicle implements Loaded, Passable {
 
 	public Truck(String type, String model, String transmission, double litresPerHudredKm, int cost,
 	             int numberOfSeats, int yearOfManufacture) {
 		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture);
 	}
 
+	/**
+	 * inform.
+	 * inform() method overrides abstract method from Vehicle class and prints information what truck is in console
+	 */
 	@Override
 	public void inform() {
 		System.out.println("About " + super.type + ": \n" +
@@ -18,11 +29,19 @@ public class Truck extends Vehicle implements Loaded, Passable{
 				"leather seats and a DVD entertainment system.");
 	}
 
+	/**
+	 * transportGoods.
+	 * transportGoods() method overrides abstract method from Loaded interface, prints text in console
+	 */
 	@Override
 	public void transportGoods() {
 		System.out.println("You can transport goods on " + super.getModel());
 	}
 
+	/**
+	 * driveOffRoad.
+	 * driveOffRoad() method overrides abstract method from Passable interface, prints text in console
+	 */
 	@Override
 	public void driveOffRoad() {
 		System.out.println("On " + super.getModel() + " you can drive off-road");

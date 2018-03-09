@@ -2,6 +2,13 @@ package tasks.model;
 
 import sun.security.util.Length;
 
+/**
+ * Vehicle.
+ *
+ * @author Mikhail Klimentsyeu
+ * @version 1.0
+ * @since 03/09/2018
+ */
 public abstract class Vehicle {
 
 	protected String type;
@@ -77,12 +84,17 @@ public abstract class Vehicle {
 
 	public abstract void inform();
 
+	/**
+	 * drive.
+	 * drive() method prints values of model, type, transmission, litresPerHudredKm, numberOfSeats,
+	 * getYearOfManufacture variables in console
+	 */
 	public void drive() {
 		System.out.println("\"" + getModel() + "\"" + " which has:" +
 				" {Type: " + getType() + "}" +
 				" {Transmission: " + getTransmission() + "}" +
 				" {Fuel consumption on l/100 km: " + getLitresPerHudredKm() + "}" +
 				" {Number of seats: " + getNumberOfSeats() + "}" +
-				" {Year of manufacture: " + getYearOfManufacture()+ "}");
+				" {Year of manufacture: " + getYearOfManufacture() + "}");
 	}
 }
