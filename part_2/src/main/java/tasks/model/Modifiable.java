@@ -1,7 +1,9 @@
 package tasks.model;
 
-public interface Modifiable {
-	public void liftTop();
+import java.util.Scanner;
 
-	public void lowerTop();
+public interface Modifiable {
+	public void liftRoof(Scanner scan);
+
+	public void lowerRoof(Scanner scan);
 }
