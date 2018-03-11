@@ -1,5 +1,6 @@
 package tasks.exceptions;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -17,7 +18,7 @@ public class Cabriolet extends Vehicle implements Modifiable {
 	public Cabriolet(String type, String model, String transmission, double litresPerHudredKm, int cost,
 	                 int numberOfSeats, int yearOfManufacture, String color, boolean topRaised)
 			throws InvalidCarTypeException, InvalidTransmissionTypeException {
-		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats,  yearOfManufacture, color);
+		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture, color);
 		this.topRaised = topRaised;
 		if (!this.TYPE.equalsIgnoreCase(type)) {
 			throw new InvalidCarTypeException("Cabriolet");
@@ -50,25 +51,46 @@ public class Cabriolet extends Vehicle implements Modifiable {
 	 */
 	@Override
 	public void liftRoof(Scanner scan) {
-		boolean condition = true;
-		if (topRaised == true) {
-			System.out.print("Do you want to raise the roof?\nRoof is already raised");
-			condition = false;
-		}
-		while (condition) {
-			System.out.print("\nDo you want to raise the roof? Please input a number below:\n1. Yes\n2. No\n3. Exit\nAnswer: ");
-			int answer = scan.nextInt();
-			if (answer == 3) {
-				return;
-			} else if (topRaised == true) {
-				System.out.print("Roof is already raised");
-				break;
-			} else if (answer == 1) {
-				topRaised = true;
-				System.out.println("Roof state: raised");
-			} else if (answer == 2) {
-				System.out.println("Roof state: lowered");
+
+		boolean correctMenuInput = true;
+
+		try {
+			if (topRaised == true) {
+				throw new ImpossibilityChangingRoofStateException("Roof is already raised");
 			}
+			System.out.print("\nDo you want to raise the roof? Please input a number below:\n1. Yes\n2. No\n3. Exit\nAnswer: ");
+			while (correctMenuInput) {
+				try {
+					correctMenuInput = false;
+					int answer = scan.nextInt();
+					if (answer != 1 && answer != 2 && answer != 3) {
+						throw new MenuSymbolInputException("Lift Roof");
+					}
+					switch (answer) {
+						case 1: {
+							topRaised = true;
+							System.out.println("Roof state: raised");
+							break;
+						}
+						case 2: {
+							System.out.println("Roof state: lowered");
+							break;
+						}
+						case 3: {
+							break;
+						}
+					}
+				} catch (MenuSymbolInputException msie) {
+					correctMenuInput = true;
+					msie.warn();
+				} catch (InputMismatchException ime) {
+					correctMenuInput = true;
+					System.err.println("Invalid Input. Instead String please input a number from the list");
+					scan.next();
+				}
+			}
+		} catch (ImpossibilityChangingRoofStateException icrse) {
+			System.err.print("You cannot raise the roof because the roof is already raised");
 		}
 	}
 
@@ -81,25 +103,45 @@ public class Cabriolet extends Vehicle implements Modifiable {
 	 */
 	@Override
 	public void lowerRoof(Scanner scan) {
-		boolean condition = true;
-		if (topRaised == false) {
-			System.out.print("Do you want to lower the roof?\nRoof is already lowered");
-			condition = false;
-		}
-		while (condition) {
-			System.out.print("\nDo you want to lower the roof? Please input a number below:\n1. Yes\n2. No\n3. Exit\nAnswer: ");
-			int answer = scan.nextInt();
-			if (answer == 3) {
-				return;
-			} else if (topRaised == false) {
-				System.out.print("Roof is already lowered");
-				break;
-			} else if (answer == 1) {
-				topRaised = false;
-				System.out.println("Roof state: lowered");
-			} else if (answer == 2) {
-				System.out.println("Roof state: raised");
+
+		boolean correctMenuInput = true;
+		try {
+			if (topRaised == false) {
+				throw new ImpossibilityChangingRoofStateException("Roof is already lowered");
 			}
+			System.out.print("\nDo you want to lower the roof? Please input a number below:\n1. Yes\n2. No\n3. Exit\nAnswer: ");
+			while (correctMenuInput) {
+				try {
+					correctMenuInput = false;
+					int answer = scan.nextInt();
+					if (answer != 1 && answer != 2 && answer != 3) {
+						throw new MenuSymbolInputException("Lower Roof");
+					}
+					switch (answer) {
+						case 1: {
+							topRaised = false;
+							System.out.println("Roof state: lowered");
+							break;
+						}
+						case 2: {
+							System.out.println("Roof state: raised");
+							break;
+						}
+						case 3: {
+							break;
+						}
+					}
+				} catch (MenuSymbolInputException msie) {
+					correctMenuInput = true;
+					msie.warn();
+				} catch (InputMismatchException ime) {
+					correctMenuInput = true;
+					System.err.println("Invalid Input. Instead String please input a number from the list");
+					scan.next();
+				}
+			}
+		} catch (ImpossibilityChangingRoofStateException icrse) {
+			System.err.print("You cannot lower the roof because the roof is already lowered");
 		}
 	}
 }

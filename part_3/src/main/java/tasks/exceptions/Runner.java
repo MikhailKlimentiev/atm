@@ -6,8 +6,8 @@ import java.util.*;
  * Runner.
  *
  * @author Mikhail Klimentsyeu
- * @version 1.0
- * @since 03/09/2018
+ * @version 2.0
+ * @since 03/11/2018
  */
 public class Runner {
 	public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class Runner {
 		try {
 			Sedan bmw3Series = new Sedan("Sedan", "BMW 3 series", "Automatic", 8.00,
 					40250, 5, 2013, "Black");
-			Sedan bmw4Series = new Sedan("Sedan", "BMW 4 Series Gran Coupe", "11212",
+			Sedan bmw4Series = new Sedan("Sedan", "BMW 4 Series Gran Coupe", "Automatic",
 					8.71, 43300, 5, 2015, "Black");
 			Sedan jaguar = new Sedan("Sedan", "Jaguar X-Type", "Automatic", 13.07,
 					35060, 5, 2008, "White");
@@ -30,7 +30,7 @@ public class Runner {
 
 			//Cabriolet's objects creation
 			Cabriolet audiA3Automatic = new Cabriolet("Cabriolet", "Audi A3 Convertible", "Automatic",
-					9.41, 38250, 4, 2018, "Black", false);
+					9.41, 38250, 4, 2018, "Black", true);
 			Cabriolet audiA3Manual = new Cabriolet("Cabriolet", "Audi A3 Convertible", "Manual",
 					9.41, 35300, 4, 2018, "Blue", true);
 
@@ -59,6 +59,48 @@ public class Runner {
 			taxiStation.add(vwTiguan);
 			taxiStation.add(chevroletColorado15);
 			taxiStation.add(chevroletColorado16);
+
+//			newTaxiStationOperations.calculateCost(taxiStation);
+//			newTaxiStationOperations.printAllCars(taxiStation);
+
+			//search a car by parameters in the Taxi Station
+			boolean condition = true;
+			System.out.println("\nPlease select an appropriate car by car's type, car's brand, " +
+					"transmission type, color and minimum year of car's manufacture");
+			while (condition) {
+				try {
+
+					String carType = newTaxiStationOperations.searchCarType(taxiStation, scan);
+					if (carType.equals("Not selected")) {
+						break;
+					}
+
+					String carModel = newTaxiStationOperations.searchCarModel(taxiStation, scan);
+					if (carModel.equals("Not selected")) {
+						break;
+					}
+
+					String carTransmissionType = newTaxiStationOperations.searchCarTransmissionType(taxiStation, scan);
+					if (carTransmissionType.equals("Not selected")) {
+						break;
+					}
+
+					String carColor = newTaxiStationOperations.searchCarColor(taxiStation, scan);
+					if (carTransmissionType.equals("Not selected")) {
+						break;
+					}
+
+					int сarManufactureYear = newTaxiStationOperations.searchCarManufactureYear(taxiStation, scan);
+
+					newTaxiStationOperations.searchCarByParameters(taxiStation, carType, carModel, carTransmissionType,
+							carColor, сarManufactureYear);
+
+				} catch (NoSuchElementException nsee) {
+					System.err.println("No more tokens are available to scan\n" + nsee.getStackTrace());
+				} catch (IllegalStateException ise) {
+					System.err.println("This scanner is closed\n" + ise.getStackTrace());
+				}
+			}
 		} catch (InvalidCarTypeException icte) {
 			icte.warn();
 		} catch (InvalidTransmissionTypeException itte) {
@@ -70,45 +112,6 @@ public class Runner {
 //		//calculate cost of all cars of the Taxi Station
 //		taxiStationOperations.calculateCost(taxiStation);
 
-		//search a car by parameters in the Taxi Station
-		boolean condition = true;
-		System.out.println("\nPlease select an appropriate car by car's type, car's brand, " +
-				"transmission type, color and minimum year of car's manufacture");
-		while (condition) {
-			try {
-
-				String carType = newTaxiStationOperations.searchCarType(taxiStation, scan);
-				if (carType.equals("Not selected")){
-					break;
-				}
-
-				String carModel = newTaxiStationOperations.searchCarModel(taxiStation, scan);
-				if (carModel.equals("Not selected")){
-					break;
-				}
-
-				String carTransmissionType = newTaxiStationOperations.searchCarTransmissionType(taxiStation, scan);
-				if (carTransmissionType.equals("Not selected")){
-					break;
-				}
-
-				String carColor = newTaxiStationOperations.searchCarColor(taxiStation, scan);
-				if (carTransmissionType.equals("Not selected")){
-					break;
-				}
-
-				int сarManufactureYear = newTaxiStationOperations.searchCarManufactureYear(taxiStation, scan);
-
-				newTaxiStationOperations.searchCarByParameters(taxiStation, carType, carModel, carTransmissionType,
-						carColor, сarManufactureYear);
-
-			} catch (NoSuchElementException nsee) {
-				System.err.println("No more tokens are available to scan\n" + nsee.getStackTrace());
-			} catch (IllegalStateException ise) {
-				System.err.println("This scanner is closed\n" + ise.getStackTrace());
-			}
-		}
-
 
 		//sort cars of the Taxi Station by fuel consumption
 //		Collections.sort(taxiStation, new FuelConsumptionComparator());
@@ -119,5 +122,7 @@ public class Runner {
 //					"{" + car.getLitresPerHudredKm() + " lpk}");
 //		}
 
+
 	}
 }
+
