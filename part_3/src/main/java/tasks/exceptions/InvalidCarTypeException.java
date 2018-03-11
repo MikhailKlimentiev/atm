@@ -2,6 +2,7 @@ package tasks.exceptions;
 
 /**
  * InvalidCarTypeException.
+ * InvalidCarTypeException occurs if invalid Car Type passed into constructor as a parameter.
  *
  * @author Mikhail Klimentsyeu
  * @version 1.0

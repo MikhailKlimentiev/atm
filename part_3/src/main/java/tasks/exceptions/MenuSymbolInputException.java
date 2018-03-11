@@ -2,6 +2,7 @@ package tasks.exceptions;
 
 /**
  * MenuSymbolInputException.
+ * MenuSymbolInputException occurs if a value getted from console is not matched to numbers which print in console menu
  *
  * @author Mikhail Klimentsyeu
  * @version 1.0
