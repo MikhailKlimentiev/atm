@@ -17,4 +17,8 @@ public class MenuSymbolInputException extends Exception {
 		super(message, cause);
 	}
 
+	public void warn() {
+		System.err.println("Invalid Input. Please input a number from the list");
+	}
+
 }

@@ -6,17 +6,25 @@ import java.util.Scanner;
  * Cabriolet.
  *
  * @author Mikhail Klimentsyeu
- * @version 1.0
- * @since 03/09/2018
+ * @version 2.0
+ * @since 03/11/2018
  */
 public class Cabriolet extends Vehicle implements Modifiable {
 
+	private static final String TYPE = "Cabriolet";
 	public boolean topRaised;
 
 	public Cabriolet(String type, String model, String transmission, double litresPerHudredKm, int cost,
-	                 int numberOfSeats, int yearOfManufacture, boolean topRaised) {
-		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture);
+	                 int numberOfSeats, int yearOfManufacture, String color, boolean topRaised)
+			throws InvalidCarTypeException, InvalidTransmissionTypeException {
+		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats,  yearOfManufacture, color);
 		this.topRaised = topRaised;
+		if (!this.TYPE.equalsIgnoreCase(type)) {
+			throw new InvalidCarTypeException("Cabriolet");
+		}
+		if (!(transmission.equalsIgnoreCase("Automatic") || transmission.equalsIgnoreCase("Manual"))) {
+			throw new InvalidTransmissionTypeException("Cabriolet");
+		}
 	}
 
 	/**

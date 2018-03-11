@@ -4,14 +4,23 @@ package tasks.exceptions;
  * Crossover.
  *
  * @author Mikhail Klimentsyeu
- * @version 1.0
- * @since 03/09/2018
+ * @version 2.0
+ * @since 03/11/2018
  */
 public class Crossover extends Vehicle implements Roomy, Passable {
 
+	private static final String TYPE = "Crossover";
+
 	public Crossover(String type, String model, String transmission, double litresPerHudredKm, int cost,
-	                 int numberOfSeats, int yearOfManufacture) {
-		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture);
+	                 int numberOfSeats, int yearOfManufacture, String color)
+			throws InvalidCarTypeException, InvalidTransmissionTypeException {
+		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture, color);
+		if (!this.TYPE.equalsIgnoreCase(type)) {
+			throw new InvalidCarTypeException("Crossover");
+		}
+		if (!(transmission.equalsIgnoreCase("Automatic") || transmission.equalsIgnoreCase("Manual"))) {
+			throw new InvalidTransmissionTypeException("Crossover");
+		}
 	}
 
 	/**

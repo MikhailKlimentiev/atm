@@ -4,14 +4,22 @@ package tasks.exceptions;
  * Sedan.
  *
  * @author Mikhail Klimentsyeu
- * @version 1.0
- * @since 03/09/2018
+ * @version 2.0
+ * @since 03/11/2018
  */
-public class Sedan extends Vehicle {
+public class Sedan extends Vehicle  {
+
+	private static final String TYPE = "Sedan";
 
 	public Sedan(String type, String model, String transmission, double litresPerHudredKm, int cost, int numberOfSeats,
-	             int yearOfManufacture) {
-		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture);
+	             int yearOfManufacture, String color) throws InvalidCarTypeException, InvalidTransmissionTypeException {
+		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture, color);
+		if (!(this.TYPE.equalsIgnoreCase(type))) {
+			throw new InvalidCarTypeException("Sedan");
+		}
+		if (!(transmission.equalsIgnoreCase("Automatic") || transmission.equalsIgnoreCase("Manual"))) {
+			throw new InvalidTransmissionTypeException("Sedan");
+		}
 	}
 
 	/**

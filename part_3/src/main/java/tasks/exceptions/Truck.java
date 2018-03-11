@@ -4,14 +4,23 @@ package tasks.exceptions;
  * Truck.
  *
  * @author Mikhail Klimentsyeu
- * @version 1.0
- * @since 03/09/2018
+ * @version 2.0
+ * @since 03/11/2018
  */
 public class Truck extends Vehicle implements Loaded, Passable {
 
+	private static final String TYPE = "Truck";
+
 	public Truck(String type, String model, String transmission, double litresPerHudredKm, int cost,
-	             int numberOfSeats, int yearOfManufacture) {
-		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture);
+	             int numberOfSeats, int yearOfManufacture, String color)
+			throws InvalidCarTypeException, InvalidTransmissionTypeException {
+		super(type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture, color);
+		if (!this.TYPE.equalsIgnoreCase(type)) {
+			throw new InvalidCarTypeException("Truck");
+		}
+		if (!(transmission.equalsIgnoreCase("Automatic") || transmission.equalsIgnoreCase("Manual"))) {
+			throw new InvalidTransmissionTypeException("Truck");
+		}
 	}
 
 	/**

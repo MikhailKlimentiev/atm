@@ -16,9 +16,10 @@ public abstract class Vehicle {
 	protected int cost;
 	protected int numberOfSeats;
 	protected int yearOfManufacture;
+	protected String color;
 
 	public Vehicle(String type, String model, String transmission, double litresPerHudredKm, int cost,
-	               int numberOfSeats, int yearOfManufacture) {
+	               int numberOfSeats, int yearOfManufacture, String color) {
 		this.type = type;
 		this.model = model;
 		this.transmission = transmission;
@@ -26,6 +27,7 @@ public abstract class Vehicle {
 		this.cost = cost;
 		this.numberOfSeats = numberOfSeats;
 		this.yearOfManufacture = yearOfManufacture;
+		this.color = color;
 	}
 
 	public String getModel() {
@@ -80,6 +82,18 @@ public abstract class Vehicle {
 		return yearOfManufacture;
 	}
 
+	public void setYearOfManufacture(int yearOfManufacture) {
+		this.yearOfManufacture = yearOfManufacture;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
 	public abstract void inform();
 
 	/**
@@ -93,6 +107,7 @@ public abstract class Vehicle {
 				" {Transmission: " + getTransmission() + "}" + "," +
 				" {Fuel consumption on l/100 km: " + getLitresPerHudredKm() + "}" + "," +
 				" {Number of seats: " + getNumberOfSeats() + "}" + "," +
+				" {Color: " + getColor() + "}" + "," +
 				" {Year of manufacture: " + getYearOfManufacture() + "}");
 	}
 }
