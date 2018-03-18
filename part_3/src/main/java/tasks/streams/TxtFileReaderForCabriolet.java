@@ -2,15 +2,25 @@ package tasks.streams;
 
 import java.io.*;
 
+/**
+ * TxtFileReaderForCabriolet.
+ *
+ * @author Mikhail Klimentsyeu
+ * @version 1.0
+ * @since 03/18/2018
+ */
 public class TxtFileReaderForCabriolet extends AbstractReader {
 
+	//Path for file to read
 	private String fullPath;
 
 	public String getFullPath() {
+
 		return fullPath;
 	}
 
 	public void setFullPath(String fullPath) {
+
 		this.fullPath = fullPath;
 	}
 
@@ -19,6 +29,13 @@ public class TxtFileReaderForCabriolet extends AbstractReader {
 		this.fullPath = fullPath;
 	}
 
+	/**
+	 * readInfoFromFile.
+	 * readInfoFromFile() method according to getted id chooses row in a file, read info splitted by ":" from this file,
+	 * passes readed information into Cabriolet object's constructor and returns Cabriolet object.
+	 * @param id
+	 * @return Cabriolet cabriolet
+	 */
 	@Override
 	public Cabriolet readInfoFromFile(int id) {
 		File f = new File(getFullPath());
