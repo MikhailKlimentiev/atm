@@ -1,8 +1,11 @@
 package tasks.streams;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
-public class TxtFileReader extends AbstractReader {
+public class TxtFileReaderForCrossover extends AbstractReader {
 
 	private String fullPath;
 
@@ -14,28 +17,27 @@ public class TxtFileReader extends AbstractReader {
 		this.fullPath = fullPath;
 	}
 
-	public TxtFileReader(String fullPath) {
+	public TxtFileReaderForCrossover(String fullPath) {
 		super();
 		this.fullPath = fullPath;
 	}
 
 	@Override
-	public Sedan readInfoFromFileForSedan(int id) {
+	public Crossover readInfoFromFile(int id) {
 		File f = new File(getFullPath());
 		BufferedReader br = null;
 		String str = null;
-		Sedan bmw3Series = null;
+		Crossover crossover = null;
 		try {
 			br = new BufferedReader(new FileReader(f));
 
 			while ((str = br.readLine()) != null) {
 				String[] info = str.split(":");
 				if (Integer.parseInt(info[0]) == id) {
-					bmw3Series = new Sedan(Integer.parseInt(info[0]), info[1], info[2], info[3],
+					crossover = new Crossover(Integer.parseInt(info[0]), info[1], info[2], info[3],
 							Double.parseDouble(info[4]), Integer.parseInt(info[5]), Integer.parseInt(info[6]),
 							Integer.parseInt(info[7]), info[8]);
 				}
-
 			}
 
 		} catch (IOException e) {
@@ -53,6 +55,6 @@ public class TxtFileReader extends AbstractReader {
 				System.out.println(e.getMessage());
 			}
 		}
-		return bmw3Series;
+		return crossover;
 	}
 }
