@@ -24,7 +24,7 @@ public class Runner {
 		System.out.print("Enter Sedan's ID: ");
 		int id1 = scan.nextInt();
 
-		TxtFileReader txtFileReader = new TxtFileReader("\\resources\\test.txt");
+		TxtFileReader txtFileReader = new TxtFileReader("resources\\test.txt");
 		Sedan bmw3Series = txtFileReader.readInfoFromFileForSedan(id1);
 		bmw3Series.drive();
 
