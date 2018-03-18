@@ -1,0 +1,2 @@
+1:Cabriolet:Audi A3 Convertible:Automatic:9.41:38250:4:2018:Black:true
+2:Cabriolet:Audi A3 Convertible:Manual:9.41:35300:4:2018:Blue:false

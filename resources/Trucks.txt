@@ -1,0 +1,2 @@
+1:Truck:Chevrolet Colorado Crew Cab Pickup:Automatic:12.38:35780:5:2015:Black
+2:Truck:Chevrolet Colorado Crew Cab Pickup:Automatic:12.38:35780:5:2016:White
