@@ -1,0 +1,4 @@
+driver = com.postgresql.jdbc.Driver
+dbURL = jdbc:postgresql://localhost:5432/TaxiStation
+user = postgres
+password = postgres
