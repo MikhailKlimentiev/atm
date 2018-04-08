@@ -1,0 +1,115 @@
+<cars>
+	<sedan>
+		<id>1</id>
+		<type>Sedan</type>
+		<model>BMW 3 series</model>
+		<transmission>Automatic</transmission>
+		<litresPerHudredKm>8.00</litresPerHudredKm>
+		<cost>40250</cost>
+		<numberOfSeats>5</numberOfSeats>
+		<yearOfManufacture>2013</yearOfManufacture>
+		<color>Black</color>
+	</sedan>
+	<sedan>
+		<id>2</id>
+		<type>Sedan</type>
+		<model>BMW 4 Series Gran Coupe</model>
+		<transmission>Automatic</transmission>
+		<litresPerHudredKm>8.71</litresPerHudredKm>
+		<cost>43300</cost>
+		<numberOfSeats>5</numberOfSeats>
+		<yearOfManufacture>2015</yearOfManufacture>
+		<color>Black</color>
+	</sedan>
+	<sedan>
+		<id>3</id>
+		<type>Sedan</type>
+		<model>Jaguar X-Type</model>
+		<transmission>Automatic</transmission>
+		<litresPerHudredKm>13.07</litresPerHudredKm>
+		<cost>35060</cost>
+		<numberOfSeats>5</numberOfSeats>
+		<yearOfManufacture>2008</yearOfManufacture>
+		<color>White</color>
+	</sedan>
+	<sedan>
+		<id>4</id>
+		<type>Sedan</type>
+		<model>Mercedes-Benz C43</model>
+		<transmission>Manual</transmission>
+		<litresPerHudredKm>12.0</litresPerHudredKm>
+		<cost>10000</cost>
+		<numberOfSeats>5</numberOfSeats>
+		<yearOfManufacture>2010</yearOfManufacture>
+		<color>Yellow</color>
+	</sedan>
+	<cabriolet>
+		<id>1</id>
+		<type>Cabriolet</type>
+		<model>Audi A3 Convertible</model>
+		<transmission>Automatic</transmission>
+		<litresPerHudredKm>9.41</litresPerHudredKm>
+		<cost>38250</cost>
+		<numberOfSeats>4</numberOfSeats>
+		<yearOfManufacture>2018</yearOfManufacture>
+		<color>Black</color>
+		<topRaised>true</topRaised>
+	</cabriolet>
+	<cabriolet>
+		<id>2</id>
+		<type>Cabriolet</type>
+		<model>Audi A3 Convertible</model>
+		<transmission>Manual</transmission>
+		<litresPerHudredKm>9.41</litresPerHudredKm>
+		<cost>35300</cost>
+		<numberOfSeats>4</numberOfSeats>
+		<yearOfManufacture>2018</yearOfManufacture>
+		<color>Blue</color>
+		<topRaised>false</topRaised>
+	</cabriolet>
+	<crossover>
+		<id>1</id>
+		<type>Crossover</type>
+		<model>Jeep Patriot 4dr</model>
+		<transmission>Automatic</transmission>
+		<litresPerHudredKm>10.69</litresPerHudredKm>
+		<cost>25840</cost>
+		<numberOfSeats>5</numberOfSeats>
+		<yearOfManufacture>2017</yearOfManufacture>
+		<color>Black</color>
+	</crossover>
+	<crossover>
+		<id>2</id>
+		<type>Crossover</type>
+		<model>Volkswagen Tiguan Limited 4dr</model>
+		<transmission>Manual</transmission>
+		<litresPerHudredKm>11.0</litresPerHudredKm>
+		<cost>21995</cost>
+		<numberOfSeats>5</numberOfSeats>
+		<yearOfManufacture>2017</yearOfManufacture>
+		<color>Black</color>
+	</crossover>
+	<truck>
+		<id>1</id>
+		<type>Truck</type>
+		<model>Chevrolet Colorado Crew Cab Pickup</model>
+		<transmission>Automatic</transmission>
+		<litresPerHudredKm>12.38</litresPerHudredKm>
+		<cost>35780</cost>
+		<numberOfSeats>5</numberOfSeats>
+		<yearOfManufacture>2015</yearOfManufacture>
+		<color>Black</color>
+	</truck>
+	<truck>
+		<id>2</id>
+		<type>Truck</type>
+		<model>Chevrolet Colorado Crew Cab Pickup</model>
+		<transmission>Automatic</transmission>
+		<litresPerHudredKm>12.38</litresPerHudredKm>
+		<cost>35780</cost>
+		<numberOfSeats>5</numberOfSeats>
+		<yearOfManufacture>2016</yearOfManufacture>
+		<color>White</color>
+	</truck>
+</cars>
+
