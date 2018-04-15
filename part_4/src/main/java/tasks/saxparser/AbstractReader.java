@@ -1,5 +1,7 @@
 package tasks.saxparser;
 
+import java.util.ArrayList;
+
 /**
  * AbstractReader.
  *
@@ -9,6 +11,6 @@ package tasks.saxparser;
  */
 public abstract class AbstractReader {
 
-	public abstract Vehicle readInfo(int id);
+	public abstract ArrayList<Vehicle> readInfo();
 
 }

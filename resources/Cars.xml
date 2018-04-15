@@ -1,115 +1,115 @@
 <cars>
 	<sedan>
-		<id>1</id>
-		<type>Sedan</type>
-		<model>BMW 3 series</model>
-		<transmission>Automatic</transmission>
-		<litresPerHudredKm>8.00</litresPerHudredKm>
-		<cost>40250</cost>
-		<numberOfSeats>5</numberOfSeats>
-		<yearOfManufacture>2013</yearOfManufacture>
-		<color>Black</color>
+		<sedanId>1</sedanId> 
+		<sedanType>Sedan</sedanType> 
+		<sedanModel>BMW 3 series</sedanModel> 
+		<sedanTransmission>Automatic</sedanTransmission> 
+		<sedanLitresPerHudredKm>8.00</sedanLitresPerHudredKm> 
+		<sedanCost>40250</sedanCost> 
+		<sedanNumberOfSeats>5</sedanNumberOfSeats>
+		<sedanYearOfManufacture>2013</sedanYearOfManufacture>
+		<sedanColor>Black</sedanColor>
 	</sedan>
 	<sedan>
-		<id>2</id>
-		<type>Sedan</type>
-		<model>BMW 4 Series Gran Coupe</model>
-		<transmission>Automatic</transmission>
-		<litresPerHudredKm>8.71</litresPerHudredKm>
-		<cost>43300</cost>
-		<numberOfSeats>5</numberOfSeats>
-		<yearOfManufacture>2015</yearOfManufacture>
-		<color>Black</color>
+		<id type="Sedan">2</id>
+		<type type="Sedan">Sedan</type>
+		<model type="Sedan">BMW 4 Series Gran Coupe</model>
+		<transmission type="Sedan">Automatic</transmission>
+		<litresPerHudredKm type="Sedan">8.71</litresPerHudredKm>
+		<cost type="Sedan">43300</cost>
+		<numberOfSeats type="Sedan">5</numberOfSeats>
+		<yearOfManufacture type="Sedan">2015</yearOfManufacture>
+		<color type="Sedan">Black</color>
 	</sedan>
 	<sedan>
-		<id>3</id>
-		<type>Sedan</type>
-		<model>Jaguar X-Type</model>
-		<transmission>Automatic</transmission>
-		<litresPerHudredKm>13.07</litresPerHudredKm>
-		<cost>35060</cost>
-		<numberOfSeats>5</numberOfSeats>
-		<yearOfManufacture>2008</yearOfManufacture>
-		<color>White</color>
+		<id type="Sedan">3</id>
+		<type type="Sedan">Sedan</type>
+		<model type="Sedan">Jaguar X-Type</model>
+		<transmission type="Sedan">Automatic</transmission>
+		<litresPerHudredKm type="Sedan">13.07</litresPerHudredKm>
+		<cost type="Sedan">35060</cost>
+		<numberOfSeats type="Sedan">5</numberOfSeats>
+		<yearOfManufacture type="Sedan">2008</yearOfManufacture>
+		<color type="Sedan">White</color>
 	</sedan>
 	<sedan>
-		<id>4</id>
-		<type>Sedan</type>
-		<model>Mercedes-Benz C43</model>
-		<transmission>Manual</transmission>
-		<litresPerHudredKm>12.0</litresPerHudredKm>
-		<cost>10000</cost>
-		<numberOfSeats>5</numberOfSeats>
-		<yearOfManufacture>2010</yearOfManufacture>
-		<color>Yellow</color>
+		<id type="Sedan">4</id>
+		<type type="Sedan">Sedan</type>
+		<model type="Sedan">Mercedes-Benz C43</model>
+		<transmission type="Sedan">Manual</transmission>
+		<litresPerHudredKm type="Sedan">12.0</litresPerHudredKm>
+		<cost type="Sedan">10000</cost>
+		<numberOfSeats type="Sedan">5</numberOfSeats>
+		<yearOfManufacture type="Sedan">2010</yearOfManufacture>
+		<color type="Sedan">Yellow</color>
 	</sedan>
 	<cabriolet>
-		<id>1</id>
-		<type>Cabriolet</type>
-		<model>Audi A3 Convertible</model>
-		<transmission>Automatic</transmission>
-		<litresPerHudredKm>9.41</litresPerHudredKm>
-		<cost>38250</cost>
-		<numberOfSeats>4</numberOfSeats>
-		<yearOfManufacture>2018</yearOfManufacture>
-		<color>Black</color>
-		<topRaised>true</topRaised>
+		<id type="Cabriolet">1</id>
+		<type type="Cabriolet">Cabriolet</type>
+		<model type="Cabriolet">Audi A3 Convertible</model>
+		<transmission type="Cabriolet">Automatic</transmission>
+		<litresPerHudredKm type="Cabriolet">9.41</litresPerHudredKm>
+		<cost type="Cabriolet">38250</cost>
+		<numberOfSeats type="Cabriolet">4</numberOfSeats>
+		<yearOfManufacture type="Cabriolet">2018</yearOfManufacture>
+		<color type="Cabriolet">Black</color>
+		<topRaised type="Cabriolet">true</topRaised>
 	</cabriolet>
 	<cabriolet>
-		<id>2</id>
-		<type>Cabriolet</type>
-		<model>Audi A3 Convertible</model>
-		<transmission>Manual</transmission>
-		<litresPerHudredKm>9.41</litresPerHudredKm>
-		<cost>35300</cost>
-		<numberOfSeats>4</numberOfSeats>
-		<yearOfManufacture>2018</yearOfManufacture>
-		<color>Blue</color>
-		<topRaised>false</topRaised>
+		<id type="Cabriolet">2</id>
+		<type type="Cabriolet">Cabriolet</type>
+		<model type="Cabriolet">Audi A3 Convertible</model>
+		<transmission type="Cabriolet">Manual</transmission>
+		<litresPerHudredKm type="Cabriolet">9.41</litresPerHudredKm>
+		<cost type="Cabriolet">35300</cost>
+		<numberOfSeats type="Cabriolet">4</numberOfSeats>
+		<yearOfManufacture type="Cabriolet">2018</yearOfManufacture>
+		<color type="Cabriolet">Blue</color>
+		<topRaised type="Cabriolet">false</topRaised>
 	</cabriolet>
 	<crossover>
-		<id>1</id>
-		<type>Crossover</type>
-		<model>Jeep Patriot 4dr</model>
-		<transmission>Automatic</transmission>
-		<litresPerHudredKm>10.69</litresPerHudredKm>
-		<cost>25840</cost>
-		<numberOfSeats>5</numberOfSeats>
-		<yearOfManufacture>2017</yearOfManufacture>
-		<color>Black</color>
+		<id type="Crossover">1</id>
+		<type type="Crossover">Crossover</type>
+		<model type="Crossover">Jeep Patriot 4dr</model>
+		<transmission type="Crossover">Automatic</transmission>
+		<litresPerHudredKm type="Crossover">10.69</litresPerHudredKm>
+		<cost type="Crossover">25840</cost>
+		<numberOfSeats type="Crossover">5</numberOfSeats>
+		<yearOfManufacture type="Crossover">2017</yearOfManufacture>
+		<color type="Crossover">Black</color>
 	</crossover>
 	<crossover>
-		<id>2</id>
-		<type>Crossover</type>
-		<model>Volkswagen Tiguan Limited 4dr</model>
-		<transmission>Manual</transmission>
-		<litresPerHudredKm>11.0</litresPerHudredKm>
-		<cost>21995</cost>
-		<numberOfSeats>5</numberOfSeats>
-		<yearOfManufacture>2017</yearOfManufacture>
-		<color>Black</color>
+		<id type="Crossover">2</id>
+		<type type="Crossover">Crossover</type>
+		<model type="Crossover">Volkswagen Tiguan Limited 4dr</model>
+		<transmission type="Crossover">Manual</transmission>
+		<litresPerHudredKm type="Crossover">11.0</litresPerHudredKm>
+		<cost type="Crossover">21995</cost>
+		<numberOfSeats type="Crossover">5</numberOfSeats>
+		<yearOfManufacture type="Crossover">2017</yearOfManufacture>
+		<color type="Crossover">Black</color>
 	</crossover>
 	<truck>
-		<id>1</id>
-		<type>Truck</type>
-		<model>Chevrolet Colorado Crew Cab Pickup</model>
-		<transmission>Automatic</transmission>
-		<litresPerHudredKm>12.38</litresPerHudredKm>
-		<cost>35780</cost>
-		<numberOfSeats>5</numberOfSeats>
-		<yearOfManufacture>2015</yearOfManufacture>
-		<color>Black</color>
+		<id type="Truck">1</id>
+		<type type="Truck">Truck</type>
+		<model type="Truck">Chevrolet Colorado Crew Cab Pickup</model>
+		<transmission type="Truck">Automatic</transmission>
+		<litresPerHudredKm type="Truck">12.38</litresPerHudredKm>
+		<cost type="Truck">35780</cost>
+		<numberOfSeats type="Truck">5</numberOfSeats>
+		<yearOfManufacture type="Truck">2015</yearOfManufacture>
+		<color type="Truck">Black</color>
 	</truck>
 	<truck>
-		<id>2</id>
-		<type>Truck</type>
-		<model>Chevrolet Colorado Crew Cab Pickup</model>
-		<transmission>Automatic</transmission>
-		<litresPerHudredKm>12.38</litresPerHudredKm>
-		<cost>35780</cost>
-		<numberOfSeats>5</numberOfSeats>
-		<yearOfManufacture>2016</yearOfManufacture>
-		<color>White</color>
+		<id type="Truck">2</id>
+		<type type="Truck">Truck</type>
+		<model type="Truck">Chevrolet Colorado Crew Cab Pickup</model>
+		<transmission type="Truck">Automatic</transmission>
+		<litresPerHudredKm type="Truck">12.38</litresPerHudredKm>
+		<cost type="Truck">35780</cost>
+		<numberOfSeats type="Truck">5</numberOfSeats>
+		<yearOfManufacture type="Truck">2016</yearOfManufacture>
+		<color type="Truck">White</color>
 	</truck>
 </cars>
 

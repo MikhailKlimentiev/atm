@@ -1,5 +1,8 @@
 package tasks.saxparser;
 
+import tasks.database.InvalidCarTypeException;
+import tasks.database.InvalidTransmissionTypeException;
+
 /**
  * Sedan.
  *
@@ -12,7 +15,7 @@ public class Sedan extends Vehicle {
 	private static final String TYPE = "Sedan";
 
 	public Sedan(int id, String type, String model, String transmission, double litresPerHudredKm, int cost, int numberOfSeats,
-	             int yearOfManufacture, String color) throws InvalidCarTypeException, InvalidTransmissionTypeException {
+	             int yearOfManufacture, String color) throws tasks.database.InvalidCarTypeException, tasks.database.InvalidTransmissionTypeException {
 		super(id, type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture, color);
 		if (!(this.TYPE.equalsIgnoreCase(type))) {
 			throw new InvalidCarTypeException("Sedan");
@@ -21,6 +24,7 @@ public class Sedan extends Vehicle {
 			throw new InvalidTransmissionTypeException("Sedan");
 		}
 	}
+
 
 	/**
 	 * inform.
