@@ -15,8 +15,12 @@ public class Cabriolet extends Vehicle implements Modifiable {
 	private static final String TYPE = "Cabriolet";
 	public boolean topRaised;
 
+	public void setTopRaised(boolean topRaised) {
+		this.topRaised = topRaised;
+	}
+
 	public Cabriolet(int id, String type, String model, String transmission, double litresPerHudredKm, int cost,
-	                 int numberOfSeats, int yearOfManufacture, String color, boolean topRaised)
+					 int numberOfSeats, int yearOfManufacture, String color, boolean topRaised)
 			throws InvalidCarTypeException, InvalidTransmissionTypeException {
 		super(id, type, model, transmission, litresPerHudredKm, cost, numberOfSeats, yearOfManufacture, color);
 		this.topRaised = topRaised;
