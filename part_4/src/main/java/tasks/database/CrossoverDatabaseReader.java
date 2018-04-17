@@ -14,73 +14,73 @@ import java.sql.SQLException;
  */
 public class CrossoverDatabaseReader extends AbstractReader {
 
-	private Connection connection;
+    private Connection connection;
 
-	public CrossoverDatabaseReader(Connection connection) {
-		super();
-		this.connection = connection;
-	}
+    public CrossoverDatabaseReader(Connection connection) {
+        super();
+        this.connection = connection;
+    }
 
-	public Connection getConnection() {
-		return connection;
-	}
+    public Connection getConnection() {
+        return connection;
+    }
 
-	public void setConnection(Connection connection) {
-		this.connection = connection;
-	}
+    public void setConnection(Connection connection) {
+        this.connection = connection;
+    }
 
-	/**
-	 * readInfo.
-	 * readInfo() method overrides abstract method from AbstractReader class gets id, creates prepareStatement
-	 * with select query for connected database, gets resultSet from connected database for id received as a parameter,
-	 * initializes Crossover object with values from received resultSet and returns initialized Crossover object.
-	 *
-	 * @param id
-	 * @return Crossover crossover
-	 */
-	@Override
-	public Crossover readInfo(int id) {
-		PreparedStatement preparedStatement = null;
-		ResultSet resultSet = null;
+    /**
+     * readInfo.
+     * readInfo() method overrides abstract method from AbstractReader class gets id, creates prepareStatement
+     * with select query for connected database, gets resultSet from connected database for id received as a parameter,
+     * initializes Crossover object with values from received resultSet and returns initialized Crossover object.
+     *
+     * @param id
+     * @return Crossover crossover
+     */
+    @Override
+    public Crossover readInfo(int id) {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
 
-		Crossover crossover = null;
+        Crossover crossover = null;
 
-		try {
-			preparedStatement = getConnection().prepareStatement("select * from public.\"Crossover\" where id=?;");
-			preparedStatement.setInt(1, id);
+        try {
+            preparedStatement = getConnection().prepareStatement("select * from public.\"Crossover\" where id=?;");
+            preparedStatement.setInt(1, id);
 
-			resultSet = preparedStatement.executeQuery();
-			while (resultSet.next()) {
-				if (resultSet.getInt("id") == id) {
-					crossover = new Crossover(resultSet.getInt("id"), resultSet.getString("type"),
-							resultSet.getString("model"), resultSet.getString("transmission"),
-							resultSet.getDouble("litresPerHudredKm"), resultSet.getInt("cost"),
-							resultSet.getInt("numberOfSeats"), resultSet.getInt("yearOfManufacture"),
-							resultSet.getString("color"));
-				}
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		} catch (InvalidTransmissionTypeException e) {
-			e.printStackTrace();
-		} catch (InvalidCarTypeException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (null != resultSet) {
-					resultSet.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				if (preparedStatement != null) {
-					preparedStatement.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return crossover;
-	}
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                if (resultSet.getInt("id") == id) {
+                    crossover = new Crossover(resultSet.getInt("id"), resultSet.getString("type"),
+                            resultSet.getString("model"), resultSet.getString("transmission"),
+                            resultSet.getDouble("litresPerHudredKm"), resultSet.getInt("cost"),
+                            resultSet.getInt("numberOfSeats"), resultSet.getInt("yearOfManufacture"),
+                            resultSet.getString("color"));
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } catch (InvalidTransmissionTypeException e) {
+            e.printStackTrace();
+        } catch (InvalidCarTypeException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (null != resultSet) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return crossover;
+    }
 }

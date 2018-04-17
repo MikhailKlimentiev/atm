@@ -26,14 +26,12 @@ public class Runner {
 
     public static void main(String[] args) {
 
-
         Scanner scan = new Scanner(System.in);
 
         List<Vehicle> taxiStation = new ArrayList();
         TaxiStationOperations TaxiStationOperations = new TaxiStationOperations();
 
         try {
-
 
             XMLFileReader xmlReader = new XMLFileReader(CARS_INFO_XML);
             taxiStation = xmlReader.readInfo();

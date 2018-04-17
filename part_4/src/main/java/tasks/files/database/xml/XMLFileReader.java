@@ -1,13 +1,15 @@
-package tasks.saxparser;
+package tasks.files.database.xml;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
+import org.xml.sax.SAXException;
+import tasks.saxparser.AbstractReader;
+import tasks.saxparser.Vehicle;
+
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-
-import org.xml.sax.SAXException;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * XMLFileReader.
