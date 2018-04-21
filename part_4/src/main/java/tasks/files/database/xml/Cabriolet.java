@@ -28,6 +28,14 @@ public class Cabriolet extends Vehicle implements Modifiable {
 		}
 	}
 
+	public boolean isTopRaised() {
+		return topRaised;
+	}
+
+	public void setTopRaised(boolean topRaised) {
+		this.topRaised = topRaised;
+	}
+
 	/**
 	 * inform.
 	 * inform() method overrides abstract method from Vehicle class and prints information what cabriolet is in console

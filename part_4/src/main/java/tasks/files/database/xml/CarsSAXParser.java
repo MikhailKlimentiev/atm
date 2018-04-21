@@ -3,13 +3,6 @@ package tasks.files.database.xml;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-import tasks.database.InvalidCarTypeException;
-import tasks.database.InvalidTransmissionTypeException;
-import tasks.saxparser.Cabriolet;
-import tasks.saxparser.Crossover;
-import tasks.saxparser.Sedan;
-import tasks.saxparser.Truck;
-import tasks.saxparser.Vehicle;
 
 import java.util.ArrayList;
 
@@ -23,8 +16,8 @@ import java.util.ArrayList;
 public class CarsSAXParser extends DefaultHandler {
 
     private StringBuilder thisElement;
-    private Sedan sedan;
-    private Cabriolet cabriolet;
+    private tasks.files.database.xml.Sedan sedan;
+    private tasks.files.database.xml.Cabriolet cabriolet;
     private Crossover crossover;
     private Truck truck;
 
@@ -51,27 +44,27 @@ public class CarsSAXParser extends DefaultHandler {
             try {
                 cabriolet = new Cabriolet(0, "Cabriolet", "model", "Manual",
                         0, 0, 0, 0, "color", true);
-            } catch (tasks.saxparser.InvalidCarTypeException e) {
+            } catch (InvalidCarTypeException e) {
                 e.printStackTrace();
-            } catch (tasks.saxparser.InvalidTransmissionTypeException e) {
+            } catch (InvalidTransmissionTypeException e) {
                 e.printStackTrace();
             }
         } else if (qName.equals("crossover")) {
             try {
                 crossover = new Crossover(0, "Crossover", "model", "Manual",
                         0, 0, 0, 0, "color");
-            } catch (tasks.saxparser.InvalidCarTypeException e) {
+            } catch (InvalidCarTypeException e) {
                 e.printStackTrace();
-            } catch (tasks.saxparser.InvalidTransmissionTypeException e) {
+            } catch (InvalidTransmissionTypeException e) {
                 e.printStackTrace();
             }
         } else if (qName.equals("truck")) {
             try {
                 truck = new Truck(0, "Truck", "model", "Manual", 0,
                         0, 0, 0, "color");
-            } catch (tasks.saxparser.InvalidCarTypeException e) {
+            } catch (InvalidCarTypeException e) {
                 e.printStackTrace();
-            } catch (tasks.saxparser.InvalidTransmissionTypeException e) {
+            } catch (InvalidTransmissionTypeException e) {
                 e.printStackTrace();
             }
         }
@@ -187,7 +180,57 @@ public class CarsSAXParser extends DefaultHandler {
         thisElement.append(ch, start, length);
     }
 
-    public ArrayList<Vehicle> getTaxiPark() {
-        return taxiPark;
+    public ArrayList<Vehicle> getVehicleByType(int typeId) {
+        String selectedCarType;
+        ArrayList<Vehicle> vehicleSetByCarType = new ArrayList<Vehicle>();
+        switch (typeId) {
+            case 1:
+                selectedCarType = "Sedan";
+                for (Vehicle vehicle : taxiPark) {
+                    if ((vehicle.getType()).equals(selectedCarType)) {
+                        vehicleSetByCarType.add(vehicle);
+                    }
+                }
+                break;
+
+            case 2:
+                selectedCarType = "Cabriolet";
+                for (Vehicle vehicle : taxiPark) {
+                    if ((vehicle.getType()).equals(selectedCarType)) {
+                        vehicleSetByCarType.add(vehicle);
+                    }
+                }
+                break;
+
+            case 3:
+                selectedCarType = "Crossover";
+                for (Vehicle vehicle : taxiPark) {
+                    if ((vehicle.getType()).equals(selectedCarType)) {
+                        vehicleSetByCarType.add(vehicle);
+                    }
+                }
+                break;
+
+            case 4:
+                selectedCarType = "Truck";
+                for (Vehicle vehicle : taxiPark) {
+                    if ((vehicle.getType()).equals(selectedCarType)) {
+                        vehicleSetByCarType.add(vehicle);
+                    }
+                }
+                break;
+        }
+        return vehicleSetByCarType;
+    }
+
+
+    public Vehicle getVehicleById(ArrayList<Vehicle> getVehicleByType, int carId) {
+        Vehicle result = null;
+        for (Vehicle vehicle : getVehicleByType) {
+            if (vehicle.getId() == carId) {
+                result = vehicle;
+            }
+        }
+        return result;
     }
 }

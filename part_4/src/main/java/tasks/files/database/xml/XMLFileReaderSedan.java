@@ -1,9 +1,6 @@
 package tasks.files.database.xml;
 
 import org.xml.sax.SAXException;
-import tasks.saxparser.AbstractReader;
-import tasks.saxparser.Vehicle;
-
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -12,23 +9,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * XMLFileReader.
+ * XMLFileReaderSedan.
  *
  * @author Mikhail Klimentsyeu
- * @version 1.0
- * @since 04/16/2018
+ * @version 2.0
+ * @since 04/21/2018
  */
-public class XMLFileReader extends AbstractReader {
+public class XMLFileReaderSedan extends AbstractReader {
 
     private String fullPathForXmlToBeParsed;
 
-    public XMLFileReader(String fullPath) {
+    public XMLFileReaderSedan(String fullPath) {
         super();
         this.fullPathForXmlToBeParsed = fullPath;
     }
 
     @Override
-    public ArrayList<Vehicle> readInfo() {
+    public Vehicle readInfo(int id) {
+        ArrayList<Vehicle> vehicleSetByCarType = null;
+        Vehicle vehicle = null;
         File fileInput = new File(fullPathForXmlToBeParsed);
         SAXParserFactory spfac = SAXParserFactory.newInstance();
         CarsSAXParser handler = null;
@@ -36,10 +35,12 @@ public class XMLFileReader extends AbstractReader {
             SAXParser sp = spfac.newSAXParser();
             handler = new CarsSAXParser();
             sp.parse(fileInput, handler);
+            vehicleSetByCarType = handler.getVehicleByType(1);
+            vehicle = handler.getVehicleById(vehicleSetByCarType, id);
         } catch (ParserConfigurationException | SAXException | IOException e) {
             System.out.println("Parsing fails: " + e.getMessage());
         }
-        return handler.getTaxiPark();
+        return vehicle;
     }
 }
 
