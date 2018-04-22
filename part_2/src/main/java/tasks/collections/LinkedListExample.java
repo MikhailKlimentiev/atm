@@ -56,7 +56,7 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 		double startTime = System.nanoTime();
 		this.linkedListExample.add(element);
 		double endTime = System.nanoTime();
-		System.out.println(format("\nThe element %d has been successfully added into the linkedListExample", element));
+		System.out.println(format("The element %d has been successfully added into the linkedListExample.", element));
 		return endTime - startTime;
 	}
 
@@ -73,9 +73,9 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 		int index = scan.nextInt();
 		double startTime = System.nanoTime();
 		if (index >= 0 && index <= this.linkedListExample.size() - 1) {
-			System.out.println(format("\n%d-th element of the linkedListExample: %d",
+			System.out.println(format("%d-th element of the linkedListExample: %d.",
 					index, this.linkedListExample.get(index)));
-		} else System.out.println("\nYou have typed incorrect index");
+		} else System.out.println("You have typed incorrect index.");
 		double endTime = System.nanoTime();
 		return endTime - startTime;
 	}
@@ -93,9 +93,9 @@ public class LinkedListExample implements Insertable, Printable, Derivable, Remo
 		int index = scan.nextInt();
 		double startTime = System.nanoTime();
 		if (index >= 0 && index <= this.linkedListExample.size() - 1) {
-			System.out.println(format("\n%d-th element of the linkedListExample %d has been removed",
+			System.out.println(format("%d-th element of the linkedListExample %d has been removed.",
 					index, this.linkedListExample.remove(index)));
-		} else System.out.println("\nYou have typed incorrect index");
+		} else System.out.println("You have typed incorrect index.");
 		double endTime = System.nanoTime();
 		return endTime - startTime;
 	}

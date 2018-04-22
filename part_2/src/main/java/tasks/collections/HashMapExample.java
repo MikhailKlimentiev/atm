@@ -51,12 +51,12 @@ public class HashMapExample implements Printable, Insertable, Derivable, Removab
 	public double countTimeAddingElement(Scanner scan) {
 		System.out.print("\nPlease input Integer element's key to add into the hashMapExample: ");
 		Integer key = scan.nextInt();
-		System.out.print("\nPlease input String element's value to add into the hashMapExample: ");
+		System.out.print("Please input String element's value to add into the hashMapExample: ");
 		String value = scan.next();
 		double startTime = System.nanoTime();
 		this.hashMapExample.put(key, value);
 		double endTime = System.nanoTime();
-		System.out.println(format("\nThe key %d and the value '%s' has been successfully added into the the hashMapExample",
+		System.out.println(format("The key %d and the value '%s' has been successfully added into the the hashMapExample.",
 				key, value));
 		return endTime - startTime;
 	}
@@ -74,9 +74,9 @@ public class HashMapExample implements Printable, Insertable, Derivable, Removab
 		Integer key = scan.nextInt();
 		double startTime = System.nanoTime();
 		if (key >= 0 && key <= this.hashMapExample.size() - 1) {
-			System.out.println(format("\nKey: %d Value: '%s' of the hashMapExample", key, this.hashMapExample.get(key)));
+			System.out.println(format("Key: %d Value: '%s' of the hashMapExample.", key, this.hashMapExample.get(key)));
 		} else {
-			System.out.println("\nYou have typed incorrect index");
+			System.out.println("You have typed incorrect index.");
 		}
 		double endTime = System.nanoTime();
 		return endTime - startTime;
@@ -95,10 +95,10 @@ public class HashMapExample implements Printable, Insertable, Derivable, Removab
 		Integer key = scan.nextInt();
 		double startTime = System.nanoTime();
 		if (key >= 0 && key <= this.hashMapExample.size() - 1) {
-			System.out.println(format("\nKey: %d Value: %s of the hashMapExample has been removed",
+			System.out.println(format("Key: %d Value: %s of the hashMapExample has been removed.",
 					key, this.hashMapExample.remove(key)));
 		} else {
-			System.out.println("\nYou have typed incorrect index");
+			System.out.println("You have typed incorrect index.");
 		}
 		double endTime = System.nanoTime();
 		return endTime - startTime;

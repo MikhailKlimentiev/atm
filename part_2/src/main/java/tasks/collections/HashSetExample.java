@@ -56,7 +56,7 @@ public class HashSetExample implements Insertable, Printable, Derivable, Removab
 		double startTime = System.nanoTime();
 		this.hashSetExample.add(element);
 		double endTime = System.nanoTime();
-		System.out.println(format("\nThe element %s has been successfully added into the hashSetExample", element));
+		System.out.println(format("The element %s has been successfully added into the hashSetExample.", element));
 		return endTime - startTime;
 	}
 
@@ -76,11 +76,11 @@ public class HashSetExample implements Insertable, Printable, Derivable, Removab
 		for (int index = 0; iterator.hasNext(); index++, iterator.next()) {
 			if (indexFromUser >= 0 && indexFromUser <= this.hashSetExample.size() - 1) {
 				if (index == indexFromUser) {
-					System.out.println(format("\n%d-th element of the hashSetExample: %s", index, iterator.next()));
+					System.out.println(format("%d-th element of the hashSetExample: %s.", index, iterator.next()));
 					break;
 				}
 			} else {
-				System.out.println("\nYou have typed incorrect index");
+				System.out.println("You have typed incorrect index.");
 				break;
 			}
 		}
@@ -105,12 +105,12 @@ public class HashSetExample implements Insertable, Printable, Derivable, Removab
 			if (indexFromUser >= 0 && indexFromUser <= this.hashSetExample.size() - 1) {
 				if (index == indexFromUser) {
 					String elementToRemove = (String) iterator.next();
-					System.out.println(format("\n%d-th element of the hashSetExample %s has been removed", index,
+					System.out.println(format("%d-th element of the hashSetExample %s has been removed.", index,
 							elementToRemove, hashSetExample.remove(elementToRemove)));
 					break;
 				}
 			} else {
-				System.out.println("\nYou have typed incorrect index");
+				System.out.println("You have typed incorrect index.");
 				break;
 			}
 		}

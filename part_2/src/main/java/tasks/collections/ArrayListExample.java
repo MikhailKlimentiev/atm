@@ -59,7 +59,7 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 		double startTime = System.nanoTime();
 		this.arrayListExample.add(element);
 		double endTime = System.nanoTime();
-		System.out.println(format("\nThe element %d has been successfully added into the arrayListExample", element));
+		System.out.println(format("The element %d has been successfully added into the arrayListExample.", element));
 		return endTime - startTime;
 	}
 
@@ -76,9 +76,9 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 		int index = scan.nextInt();
 		double startTime = System.nanoTime();
 		if (index >= 0 && index <= this.arrayListExample.size() - 1) {
-			System.out.println(format("\n%d-th element of the arrayListExample: %d",
+			System.out.println(format("%d-th element of the arrayListExample: %d.",
 					index, this.arrayListExample.get(index)));
-		} else System.out.println("\nYou have typed incorrect index");
+		} else System.out.println("You have typed incorrect index.");
 		double endTime = System.nanoTime();
 		return endTime - startTime;
 	}
@@ -96,9 +96,9 @@ public class ArrayListExample implements Insertable, Printable, Derivable, Remov
 		int index = scan.nextInt();
 		double startTime = System.nanoTime();
 		if (index >= 0 && index <= this.arrayListExample.size() - 1) {
-			System.out.println(format("\n%d-th element of the arrayListExample %d has been removed",
+			System.out.println(format("%d-th element of the arrayListExample %d has been removed.",
 					index, this.arrayListExample.remove(index)));
-		} else System.out.println("\nYou have typed incorrect index");
+		} else System.out.println("You have typed incorrect index.");
 		double endTime = System.nanoTime();
 		return endTime - startTime;
 	}
