@@ -6,56 +6,69 @@ import java.util.Scanner;
  * OperationSwitcher.
  *
  * @author Mikhail Klimentsyeu
- * @version 2.0
- * @since 02/11/2018
+ * @version 3.0
+ * @since 04/22/2018
  */
 public class OperationSwitcher {
-	String operation;
+    double result = 0;
 
-	/**
-	 * OperationSwitcher.
-	 * This method is a constructor
-	 */
-	public OperationSwitcher() {
+    public double switchOperation(Scanner scan, boolean condition) {
+        double firstNumber;
+        double secondNumber;
+        int operation;
 
-	}
+        System.out.println("\nPlease input first number: ");
+        if (scan.hasNextDouble()) {
+            firstNumber = scan.nextDouble();
+        } else {
+            scan.next();
+            System.err.println("You inputted not a number. Please try again.");
+            return 0;
+        }
 
-	/**
-	 * switchOperation.
-	 * This method takes symbol from the console and according to the symbol selects appropriate operation
-	 */
-	public void switchOperation() {
-		OperationsSet operationsSet = new OperationsSet();
+        System.out.println("Please input second number: ");
+        if (scan.hasNextDouble()) {
+            secondNumber = scan.nextDouble();
+        } else {
+            scan.next();
+            System.err.println("You inputted not a number. Please try again.");
+            return 0;
+        }
 
-		System.out.println("The calculator can do the following operations: ");
-		System.out.println("a. 'add'");
-		System.out.println("b. 'subtract'");
-		System.out.println("c. 'multiply'");
-		System.out.println("d. 'divide'");
-		System.out.print("To select an operation please enter the appropriate letter and press Enter: ");
+        System.out.println("Please select the operation below:\n1. - Add\n2. - Subtract\n3. - Multiply\n4. - Divide\n0. - Exit");
+        if (scan.hasNextInt()) {
+            operation = scan.nextInt();
 
-		Scanner scan = new Scanner(System.in);
-		this.operation = scan.nextLine();
-		switch (this.operation) {
-			case "a": {
-				operationsSet.add();
-				break;
-			}
-			case "b": {
-				operationsSet.subtract();
-				break;
-			}
-			case "c": {
-				operationsSet.multiply();
-				break;
-			}
-			case "d": {
-				operationsSet.divide();
-				break;
-			}
-			default: {
-				System.out.println("Unfortunately you have typed invalid symbol");
-			}
-		}
-	}
+            switch (operation) {
+                case 1: {
+                    result = firstNumber + secondNumber;
+                    break;
+                }
+                case 2: {
+                    result = firstNumber - secondNumber;
+                    break;
+                }
+                case 3: {
+                    result = firstNumber * secondNumber;
+                    break;
+                }
+                case 4: {
+                    result = firstNumber / secondNumber;
+                    break;
+                }
+                case 0: {
+                    System.out.println("Completed.");
+                    condition = false;
+                    break;
+                }
+                default: {
+                    System.err.println("You inputted not value number. Please try again.");
+                }
+            }
+        } else {
+            scan.next();
+            System.err.println("You inputted not a number. Please try again.");
+        }
+        return result;
+    }
 }

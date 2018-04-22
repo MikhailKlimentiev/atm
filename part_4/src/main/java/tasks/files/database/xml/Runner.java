@@ -91,7 +91,7 @@ public class Runner {
                     dataSourceReading = scan.nextInt();
 //---------------------------- Switch for Data Source ---------------------------------------------------------------
                     switch (dataSourceReading) {
-                        case (1):
+                        case (1): {
                             System.out.println("Please select car type to read from .txt file:\n1. - Sedan" +
                                     "\n2. - Cabriolet\n3. - Crossover\n4. - Truck\n0. - Exit");
 // --------------------------- Check that Car Type input is int if reading from .txt file ----------------------------
@@ -99,7 +99,7 @@ public class Runner {
                                 carTypeReading = scan.nextInt();
 //---------------------------- Switch for Car Type if reading from .txt file -----------------------------------------
                                 switch (carTypeReading) {
-                                    case (1):
+                                    case (1): {
                                         TxtFileReaderForSedan txtFileReaderForSedan = new TxtFileReaderForSedan(SEDANS_FILE_PATH);
                                         System.out.println("Please input Sedan's id to add into ArrayList:");
                                         // Check car id input is int
@@ -117,8 +117,8 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (2):
+                                    }
+                                    case (2): {
                                         TxtFileReaderForCabriolet txtFileReaderForCabriolet = new TxtFileReaderForCabriolet(CABRIOLETS_FILE_PATH);
                                         System.out.println("Please input Cabriolet's id to add into ArrayList:");
                                         if (scan.hasNextInt()) {
@@ -134,8 +134,8 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (3):
+                                    }
+                                    case (3): {
                                         TxtFileReaderForCrossover txtFileReaderForCrossover = new TxtFileReaderForCrossover(CROSSOVERS_FILE_PATH);
                                         System.out.println("Please input Crossover's id to add into ArrayList:");
                                         if (scan.hasNextInt()) {
@@ -151,8 +151,8 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (4):
+                                    }
+                                    case (4): {
                                         TxtFileReaderForTruck txtFileReaderForTruck = new TxtFileReaderForTruck(TRUCKS_FILE_PATH);
                                         System.out.println("Please input Truck's id to add into ArrayList:");
                                         if (scan.hasNextInt()) {
@@ -168,15 +168,16 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (0):
+                                    }
+                                    case (0): {
                                         System.out.println("Adding cars into taxiPark collection is completed.\n");
                                         repeat = false;
                                         break;
-
-                                    default:
+                                    }
+                                    default: {
                                         System.err.println("Incorrect value! Please, try again.");
                                         break;
+                                    }
                                 }
                                 // Check that Car Type input is int if reading from .txt
                             } else {
@@ -185,8 +186,8 @@ public class Runner {
                             }
                             // for case #1 (Reading from .txt file)
                             break;
-
-                        case (2):
+                        }
+                        case (2): {
                             //------------------ Driver registration -----------------------------------------
                             try {
                                 Class.forName(driverName);
@@ -211,7 +212,7 @@ public class Runner {
                                 carTypeReading = scan.nextInt();
 //---------------------------- Switch for Car Type if reading from PostgreSQL ------------------------------------
                                 switch (carTypeReading) {
-                                    case (1):
+                                    case (1): {
                                         // ------------------- DataBaseReader for sedans-------------------------------
                                         SedanDatabaseReader sedanDbReader = new SedanDatabaseReader(connection);
 
@@ -238,8 +239,8 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (2):
+                                    }
+                                    case (2): {
                                         // ------------------- DataBaseReader for Cabriolets---------------------------------
                                         CabrioletDatabaseReader сabrioletDbReader = new CabrioletDatabaseReader(connection);
 
@@ -266,8 +267,8 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (3):
+                                    }
+                                    case (3): {
                                         // ------------------- DataBaseReader for Crossovers---------------------------------
                                         CrossoverDatabaseReader crossoverDbReader = new CrossoverDatabaseReader(connection);
 
@@ -294,8 +295,8 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (4):
+                                    }
+                                    case (4): {
                                         // ------------------- DataBaseReader for Trucks---------------------------------
                                         TruckDatabaseReader truckDbReader = new TruckDatabaseReader(connection);
 
@@ -322,8 +323,8 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (0):
+                                    }
+                                    case (0): {
                                         System.out.println("Adding cars into taxiPark collection is completed.\n");
                                         repeat = false;
 
@@ -337,10 +338,11 @@ public class Runner {
                                             System.err.println("SQLException is throwed:\nStackTrace:\n" + e.getStackTrace());
                                         }
                                         break;
-
-                                    default:
+                                    }
+                                    default: {
                                         System.err.println("Incorrect value! Please, try again.");
                                         break;
+                                    }
                                 }
                                 // Check that Car Type input is int if reading from PostgreSQL
                             } else {
@@ -349,8 +351,8 @@ public class Runner {
                             }
                             // for case #2 (Reading from PostgreSQL)
                             break;
-
-                        case (3):
+                        }
+                        case (3): {
                             System.out.println("Please select car type to read from .xml file:\n1. - Sedan" +
                                     "\n2. - Cabriolet\n3. - Crossover\n4. - Truck\n0. - Exit");
 
@@ -359,7 +361,7 @@ public class Runner {
                                 carTypeReading = scan.nextInt();
 //---------------------------- Switch for Car Type if reading from .xml file ------------------------------------------
                                 switch (carTypeReading) {
-                                    case (1):
+                                    case (1): {
                                         System.out.println("Please input Sedan's id to add into ArrayList:");
                                         if (scan.hasNextInt()) {
                                             carIdReading = scan.nextInt();
@@ -375,8 +377,8 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (2):
+                                    }
+                                    case (2): {
                                         System.out.println("Please input Cabriolet's id to add into ArrayList:");
                                         if (scan.hasNextInt()) {
                                             carIdReading = scan.nextInt();
@@ -392,8 +394,8 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (3):
+                                    }
+                                    case (3): {
                                         System.out.println("Please input Crossover's id to add into ArrayList:");
                                         if (scan.hasNextInt()) {
                                             carIdReading = scan.nextInt();
@@ -409,8 +411,8 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (4):
+                                    }
+                                    case (4): {
                                         System.out.println("Please input Truck's id to add into ArrayList:");
                                         if (scan.hasNextInt()) {
                                             carIdReading = scan.nextInt();
@@ -426,15 +428,16 @@ public class Runner {
                                             System.err.println("You inputted not a number. Please try again.");
                                         }
                                         break;
-
-                                    case (0):
+                                    }
+                                    case (0): {
                                         System.out.println("Adding cars into taxiPark collection is completed.\n");
                                         repeat = false;
                                         break;
-
-                                    default:
+                                    }
+                                    default: {
                                         System.err.println("Incorrect value! Please, try again.");
                                         break;
+                                    }
                                 }
                                 // Check that Car Type input is int if reading from .xml file
                             } else {
@@ -443,15 +446,16 @@ public class Runner {
                             }
                             // for case #3 (Reading from PostgreSQL)
                             break;
-
-                        case (0):
+                        }
+                        case (0): {
                             System.out.println("Adding cars into taxiPark collection is completed.\n");
                             repeat = false;
                             break;
-
-                        default:
+                        }
+                        default: {
                             System.err.println("Incorrect value! Please, try again.");
                             break;
+                        }
                     }
                     // Check that Data Source input is int
                 } else {
