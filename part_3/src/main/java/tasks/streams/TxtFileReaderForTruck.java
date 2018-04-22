@@ -14,64 +14,63 @@ import java.io.IOException;
  */
 public class TxtFileReaderForTruck extends AbstractReader {
 
-	//Path for file to read
-	private String fullPath;
+    //Path for file to read
+    private String fullPath;
 
-	public String getFullPath() {
+    public String getFullPath() {
+        return fullPath;
+    }
 
-		return fullPath;
-	}
+    public void setFullPath(String fullPath) {
+        this.fullPath = fullPath;
+    }
 
-	public void setFullPath(String fullPath) {
+    public TxtFileReaderForTruck(String fullPath) {
+        super();
+        this.fullPath = fullPath;
+    }
 
-		this.fullPath = fullPath;
-	}
+    /**
+     * readInfoFromFile.
+     * readInfoFromFile() method according to getted id chooses row in a file, read info splitted by ":" from this file,
+     * passes readed information into Truck object's constructor and returns Truck object.
+     *
+     * @param id
+     * @return Sedan sedan
+     */
+    @Override
+    public Truck readInfoFromFile(int id) {
+        File f = new File(getFullPath());
+        BufferedReader br = null;
+        String str = null;
+        Truck truck = null;
+        try {
+            br = new BufferedReader(new FileReader(f));
 
-	public TxtFileReaderForTruck(String fullPath) {
-		super();
-		this.fullPath = fullPath;
-	}
+            while ((str = br.readLine()) != null) {
+                String[] info = str.split(":");
+                if (Integer.parseInt(info[0]) == id) {
+                    truck = new Truck(Integer.parseInt(info[0]), info[1], info[2], info[3],
+                            Double.parseDouble(info[4]), Integer.parseInt(info[5]), Integer.parseInt(info[6]),
+                            Integer.parseInt(info[7]), info[8]);
+                }
+            }
 
-	/**
-	 * readInfoFromFile.
-	 * readInfoFromFile() method according to getted id chooses row in a file, read info splitted by ":" from this file,
-	 * passes readed information into Truck object's constructor and returns Truck object.
-	 * @param id
-	 * @return Sedan sedan
-	 */
-	@Override
-	public Truck readInfoFromFile(int id) {
-		File f = new File(getFullPath());
-		BufferedReader br = null;
-		String str = null;
-		Truck truck = null;
-		try {
-			br = new BufferedReader(new FileReader(f));
-
-			while ((str = br.readLine()) != null) {
-				String[] info = str.split(":");
-				if (Integer.parseInt(info[0]) == id) {
-					truck = new Truck(Integer.parseInt(info[0]), info[1], info[2], info[3],
-							Double.parseDouble(info[4]), Integer.parseInt(info[5]), Integer.parseInt(info[6]),
-							Integer.parseInt(info[7]), info[8]);
-				}
-			}
-
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		} catch (InvalidTransmissionTypeException e) {
-			e.printStackTrace();
-		} catch (InvalidCarTypeException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (br != null) {
-					br.close();
-				}
-			} catch (IOException e) {
-				System.out.println(e.getMessage());
-			}
-		}
-		return truck;
-	}
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } catch (InvalidTransmissionTypeException e) {
+            e.printStackTrace();
+        } catch (InvalidCarTypeException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (br != null) {
+                    br.close();
+                }
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return truck;
+    }
 }

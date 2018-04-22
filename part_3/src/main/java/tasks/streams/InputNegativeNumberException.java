@@ -9,15 +9,16 @@ package tasks.streams;
  * @since 03/11/2018
  */
 public class InputNegativeNumberException extends Exception {
-	public InputNegativeNumberException(String message) {
-		super(message);
-	}
 
-	public InputNegativeNumberException(String message, Throwable cause) {
-		super(message, cause);
-	}
+    public InputNegativeNumberException(String message) {
+        super(message);
+    }
 
-	public void warn() {
-		System.err.println("Please input a positive number");
-	}
+    public InputNegativeNumberException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public void warn() {
+        System.err.println("Please input a positive number");
+    }
 }
