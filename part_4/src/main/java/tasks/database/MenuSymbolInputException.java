@@ -10,16 +10,16 @@ package tasks.database;
  */
 public class MenuSymbolInputException extends Exception {
 
-	public MenuSymbolInputException(String message) {
-		super(message);
-	}
+    public MenuSymbolInputException(String message) {
+        super(message);
+    }
 
-	public MenuSymbolInputException(String message, Throwable cause) {
-		super(message, cause);
-	}
+    public MenuSymbolInputException(String message, Throwable cause) {
+        super(message, cause);
+    }
 
-	public void warn() {
-		System.err.println("Invalid Input. Please input a number from the list");
-	}
+    public void warn() {
+        System.err.println("Invalid Input. Please input a number from the list");
+    }
 
 }

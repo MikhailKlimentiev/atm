@@ -8,16 +8,17 @@ package tasks.database;
  * @version 1.0
  * @since 03/11/2018
  */
-public class InvalidCarTypeException extends Exception{
-	public InvalidCarTypeException(String message) {
-		super(message);
-	}
+public class InvalidCarTypeException extends Exception {
 
-	public InvalidCarTypeException(String message, Throwable cause) {
-		super(message, cause);
-	}
+    public InvalidCarTypeException(String message) {
+        super(message);
+    }
 
-	public void warn() {
-		System.err.println("You specified invalid car type. Please input car type according specified class.");
-	}
+    public InvalidCarTypeException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public void warn() {
+        System.err.println("You specified invalid car type. Please input car type according specified class.");
+    }
 }

@@ -9,5 +9,5 @@ package tasks.database;
  */
 public interface Loaded {
 
-	public void transportGoods();
+    public void transportGoods();
 }

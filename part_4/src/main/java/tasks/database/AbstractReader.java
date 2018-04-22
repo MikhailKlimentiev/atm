@@ -9,6 +9,6 @@ package tasks.database;
  */
 public abstract class AbstractReader {
 
-	public abstract Vehicle readInfo(int id);
+    public abstract Vehicle readInfo(int id);
 
 }
