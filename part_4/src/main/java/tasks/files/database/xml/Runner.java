@@ -1,18 +1,24 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////                                                                                                         ////
-////    PRE-SELECTION FOR TEST AUTOMATION MENTORING PARTICIPATION: JAVA, part 4                              ////
-////                                                                                                         ////
-////    Task 1                                                                                               ////
-////                                                                                                         ////
-////    Дополнить объектную модель, реализованную в рамках заданий 2.1, 3.1, 3.2.                            ////
-////    Добавить чтение данных из следующих источников:                                                      ////
-////    - из базы данных (базу данных можно выбрать самостоятельно) с использованием jdbc – драйвера;        ////
-////    - из xml-файла или из json-файла (на выбор).                                                         ////
-////    Все источники данных должны реализовывать общий интерфейс или наследовать общий абстрактный класс.   ////
-////                                                                                                         ////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+//===================================================================================================================
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////                                                                                                             ////
+////    PRE-SELECTION FOR TEST AUTOMATION MENTORING PARTICIPATION: JAVA, part 4                                  ////
+////                                                                                                             ////
+////    Task 1 (часть 3 -- чтение из txt файла, чтение из базы данных PostgreSQL, чтение из xml файла)           ////
+////                                                                                                             ////
+////    Дополнить объектную модель, реализованную в рамках заданий 2.1, 3.1, 3.2.                                ////
+////    Добавить чтение данных из следующих источников:                                                          ////
+////     - из базы данных (базу данных можно выбрать самостоятельно) с использованием jdbc – драйвера;           ////
+////     - из xml-файла или из json-файла (на выбор).                                                            ////
+////                                                                                                             ////
+////    В программе можно указать источник для чтения данных:                                                    ////
+////    1. txt файл                                                                                              ////
+////    2. База данных PostgreSQL                                                                                ////
+////    3. xml файл                                                                                              ////
+////                                                                                                             ////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//===================================================================================================================
 
 package tasks.files.database.xml;
 
@@ -36,7 +42,7 @@ import java.util.*;
 
 public class Runner {
 
-    //------------------------------- Paths to files --------------------------------------------------
+    // ======================================== Paths to files =======================================================
     private static final String DATABASE_PROPERTIES = "dbproperties\\database.prop";
 
     public static final String SEDANS_FILE_PATH = "resources\\Sedans.txt";
@@ -46,7 +52,7 @@ public class Runner {
 
     private static final String CARS_INFO_XML = "resources\\Cars.xml";
 
-    //------------------------ Preparation reading from PostgeSQL ----------------------------------------
+    // ================================== Preparation reading from PostgeSQL =========================================
     static Properties properties = new Properties();
 
     // Properties loading. Static block starts first
@@ -86,18 +92,18 @@ public class Runner {
                 int carTypeReading;
                 int carIdReading;
 
-// --------------------------- Check that Data Source input is int --------------------------------------------------
+                // ========================== Check that Data Source input is int =====================================
                 if (scan.hasNextInt()) {
                     dataSourceReading = scan.nextInt();
-//---------------------------- Switch for Data Source ---------------------------------------------------------------
+                    // =========================== Switch for Data Source =============================================
                     switch (dataSourceReading) {
                         case (1): {
                             System.out.println("Please select car type to read from .txt file:\n1. - Sedan" +
                                     "\n2. - Cabriolet\n3. - Crossover\n4. - Truck\n0. - Exit");
-// --------------------------- Check that Car Type input is int if reading from .txt file ----------------------------
+                            // ============= Check that Car Type input is int if reading from .txt file ===============
                             if (scan.hasNextInt()) {
                                 carTypeReading = scan.nextInt();
-//---------------------------- Switch for Car Type if reading from .txt file -----------------------------------------
+                                // ================== Switch for Car Type if reading from .txt file ===================
                                 switch (carTypeReading) {
                                     case (1): {
                                         TxtFileReaderForSedan txtFileReaderForSedan = new TxtFileReaderForSedan(SEDANS_FILE_PATH);
@@ -188,7 +194,7 @@ public class Runner {
                             break;
                         }
                         case (2): {
-                            //------------------ Driver registration -----------------------------------------
+                            // ============================ Driver registration ======================================
                             try {
                                 Class.forName(driverName);
                                 System.out.println("PostgreSQL JDBC driver is loaded");
@@ -196,7 +202,7 @@ public class Runner {
                                 System.out.println("Postgresql JDBC driver is not found");
                             }
 
-                            // --------------------  creation connection ------------------------------------
+                            // =========================== Creation connection =======================================
                             Connection connection = null;
                             try {
                                 connection = DriverManager.getConnection(databaseURL, user, password);
@@ -207,13 +213,13 @@ public class Runner {
 
                             System.out.println("Please select car type to read from PostgreSQL:\n1. - Sedan" +
                                     "\n2. - Cabriolet\n3. - Crossover\n4. - Truck\n0. - Exit");
-// --------------------------- Check that Car Type input is int if reading from PostgreSQL -------------------------
+                            // ============ Check that Car Type input is int if reading from PostgreSQL ==============
                             if (scan.hasNextInt()) {
                                 carTypeReading = scan.nextInt();
-//---------------------------- Switch for Car Type if reading from PostgreSQL ------------------------------------
+                                // ================= Switch for Car Type if reading from PostgreSQL ===================
                                 switch (carTypeReading) {
                                     case (1): {
-                                        // ------------------- DataBaseReader for sedans-------------------------------
+                                        // ================== DataBaseReader for sedans ===============================
                                         SedanDatabaseReader sedanDbReader = new SedanDatabaseReader(connection);
 
                                         System.out.println("Please input Sedan's id to add into ArrayList:");
@@ -225,7 +231,7 @@ public class Runner {
                                             }
                                             taxiStation.add(sedan);
                                             System.out.println(sedan.toString() + " is added into collection");
-                                            // -------------------- close connection --------------------------------------
+                                            // ========================== Close connection ============================
                                             try {
                                                 if (connection != null) {
                                                     connection.close();
@@ -241,7 +247,7 @@ public class Runner {
                                         break;
                                     }
                                     case (2): {
-                                        // ------------------- DataBaseReader for Cabriolets---------------------------------
+                                        // =================== DataBaseReader for Cabriolets ==========================
                                         CabrioletDatabaseReader сabrioletDbReader = new CabrioletDatabaseReader(connection);
 
                                         System.out.println("Please input Cabriolet's id to add into ArrayList:");
@@ -253,7 +259,7 @@ public class Runner {
                                             }
                                             taxiStation.add(cabriolet);
                                             System.out.println(cabriolet.toString() + " is added into collection");
-                                            // -------------------- close connection --------------------------------------
+                                            // ======================== Close connection =============================
                                             try {
                                                 if (connection != null) {
                                                     connection.close();
@@ -269,7 +275,7 @@ public class Runner {
                                         break;
                                     }
                                     case (3): {
-                                        // ------------------- DataBaseReader for Crossovers---------------------------------
+                                        // ================ DataBaseReader for Crossovers =============================
                                         CrossoverDatabaseReader crossoverDbReader = new CrossoverDatabaseReader(connection);
 
                                         System.out.println("Please input Crossover's id to add into ArrayList:");
@@ -281,7 +287,7 @@ public class Runner {
                                             }
                                             taxiStation.add(crossover);
                                             System.out.println(crossover.toString() + " is added into collection");
-                                            // -------------------- close connection --------------------------------------
+                                            // ============================= Close connection =======================
                                             try {
                                                 if (connection != null) {
                                                     connection.close();
@@ -297,7 +303,7 @@ public class Runner {
                                         break;
                                     }
                                     case (4): {
-                                        // ------------------- DataBaseReader for Trucks---------------------------------
+                                        // ==================== DataBaseReader for Trucks ===============================
                                         TruckDatabaseReader truckDbReader = new TruckDatabaseReader(connection);
 
                                         System.out.println("Please input Truck's id to add into ArrayList:");
@@ -309,7 +315,7 @@ public class Runner {
                                             }
                                             taxiStation.add(truck);
                                             System.out.println(truck.toString() + " is added into collection");
-                                            // -------------------- close connection --------------------------------------
+                                            // ================== Close connection ======================================
                                             try {
                                                 if (connection != null) {
                                                     connection.close();
@@ -328,7 +334,7 @@ public class Runner {
                                         System.out.println("Adding cars into taxiPark collection is completed.\n");
                                         repeat = false;
 
-                                        // -------------------- close connection -----------------------------------------
+                                        // ================= Close connection =========================================
                                         try {
                                             if (connection != null) {
                                                 connection.close();
@@ -356,10 +362,10 @@ public class Runner {
                             System.out.println("Please select car type to read from .xml file:\n1. - Sedan" +
                                     "\n2. - Cabriolet\n3. - Crossover\n4. - Truck\n0. - Exit");
 
-// --------------------------- Check that Car Type input is int if reading from .xml file -----------------------------
+                            // ================= Check that Car Type input is int if reading from .xml file ==========
                             if (scan.hasNextInt()) {
                                 carTypeReading = scan.nextInt();
-//---------------------------- Switch for Car Type if reading from .xml file ------------------------------------------
+                                // =============== Switch for Car Type if reading from .xml file ======================
                                 switch (carTypeReading) {
                                     case (1): {
                                         System.out.println("Please input Sedan's id to add into ArrayList:");
@@ -464,7 +470,7 @@ public class Runner {
                 }
             }
 
-// ------------------- search a car by parameters in the Taxi Station ---------------------
+// ============================== Search a car by parameters in the Taxi Station =====================================
             boolean condition = true;
             System.out.println("\nPlease select an appropriate car by car's type, car's brand, " +
                     "transmission type, color and minimum year of car's manufacture");
@@ -495,14 +501,14 @@ public class Runner {
                         carColor, сarManufactureYear);
             }
 
-//--------------- print all cars in the Taxi Station ----------------------------------------
+// =================================== Print all cars in the Taxi Station ============================================
             TaxiStationOperations.printAllCars(taxiStation);
 
-// --------------- calculate cost of all cars of the Taxi Station ---------------------------
+// ===================================== Calculate cost of all cars of the Taxi Station ==============================
             TaxiStationOperations.calculateCost(taxiStation);
 
 
-//--------------- sort cars of the Taxi Station by fuel consumption -------------------------
+// ===================================== Sort cars of the Taxi Station by fuel consumption ===========================
             Collections.sort(taxiStation, new FuelConsumptionComparator());
             if (taxiStation.size() <= 0) {
                 throw new EmptyCollectionException("It's impossible to sort cars of Taxi Station by fuel consumption because the collection is empty.");

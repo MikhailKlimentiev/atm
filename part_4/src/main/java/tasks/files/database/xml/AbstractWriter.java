@@ -9,5 +9,5 @@ package tasks.files.database.xml;
  */
 public abstract class AbstractWriter {
 
-	public abstract void writeObjectIntoFile(Vehicle vehicle);
+    public abstract void writeObjectIntoFile(Vehicle vehicle);
 }

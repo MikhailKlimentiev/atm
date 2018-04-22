@@ -9,5 +9,5 @@ package tasks.files.database.xml;
  */
 public interface Loaded {
 
-	public void transportGoods();
+    public void transportGoods();
 }

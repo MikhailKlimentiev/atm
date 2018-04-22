@@ -9,6 +9,7 @@ package tasks.files.database.xml;
  * @since 03/11/2018
  */
 public class InvalidCarTypeException extends Exception {
+
     public InvalidCarTypeException(String message) {
         super(message);
     }
@@ -18,6 +19,6 @@ public class InvalidCarTypeException extends Exception {
     }
 
     public void warn() {
-      System.err.println("You specified invalid car type. Please input car type according specified class.");
+        System.err.println("You specified invalid car type. Please input car type according specified class.");
     }
 }

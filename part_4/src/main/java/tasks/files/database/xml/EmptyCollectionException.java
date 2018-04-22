@@ -9,15 +9,16 @@ package tasks.files.database.xml;
  * @since 03/11/2018
  */
 public class EmptyCollectionException extends Exception {
-	public EmptyCollectionException(String message) {
-		super(message);
-	}
 
-	public EmptyCollectionException(String message, Throwable cause) {
-		super(message, cause);
-	}
+    public EmptyCollectionException(String message) {
+        super(message);
+    }
 
-	public void warn() {
-		System.err.println("Taxi Station collection is empty");
-	}
+    public EmptyCollectionException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public void warn() {
+        System.err.println("Taxi Station collection is empty");
+    }
 }

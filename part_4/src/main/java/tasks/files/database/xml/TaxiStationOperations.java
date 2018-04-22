@@ -22,7 +22,7 @@ public class TaxiStationOperations {
      * @param taxiStation
      */
     public void calculateCost(List<Vehicle> taxiStation) {
-        try  {
+        try {
             if (taxiStation.size() <= 0) {
                 throw new EmptyCollectionException("It's impossible to calculate cost of Taxi Station because the collection is empty.");
             }

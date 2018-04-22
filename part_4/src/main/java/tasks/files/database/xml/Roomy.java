@@ -9,5 +9,5 @@ package tasks.files.database.xml;
  */
 public interface Roomy {
 
-	public void setAddedSeats();
+    public void setAddedSeats();
 }
