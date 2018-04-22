@@ -9,5 +9,5 @@ package tasks.exceptions;
  */
 public interface Roomy {
 
-	public void setAddedSeats();
+    public void setAddedSeats();
 }
