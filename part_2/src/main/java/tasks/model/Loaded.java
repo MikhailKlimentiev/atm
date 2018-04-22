@@ -9,5 +9,5 @@ package tasks.model;
  */
 public interface Loaded {
 
-	public void transportGoods();
+    public void transportGoods();
 }
