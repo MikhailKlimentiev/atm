@@ -9,5 +9,5 @@ package tasks.saxparser;
  */
 public interface Loaded {
 
-	public void transportGoods();
+    public void transportGoods();
 }

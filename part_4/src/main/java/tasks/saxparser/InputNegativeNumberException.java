@@ -9,6 +9,7 @@ package tasks.saxparser;
  * @since 03/11/2018
  */
 public class InputNegativeNumberException extends Exception {
+
     public InputNegativeNumberException(String message) {
         super(message);
     }

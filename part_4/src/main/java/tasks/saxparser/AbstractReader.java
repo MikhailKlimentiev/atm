@@ -11,6 +11,6 @@ import java.util.ArrayList;
  */
 public abstract class AbstractReader {
 
-	public abstract ArrayList<Vehicle> readInfo();
+    public abstract ArrayList<Vehicle> readInfo();
 
 }

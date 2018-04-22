@@ -1,16 +1,23 @@
+//===================================================================================================================
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////                                                                                                             ////
+////    PRE-SELECTION FOR TEST AUTOMATION MENTORING PARTICIPATION: JAVA, part 4                                  ////
+////                                                                                                             ////
+////    Task 1 (часть 2 -- чтение из xml файла)                                                                  ////
+////                                                                                                             ////
+////    Дополнить объектную модель, реализованную в рамках заданий 2.1, 3.1, 3.2.                                ////
+////    Добавить чтение данных из следующих источников:                                                          ////
+////     - из xml-файла или из json-файла (на выбор).                                                            ////
+////                                                                                                             ////
+////    Для чтения из xml-файла использован SAX parser                                                           ////
+////                                                                                                             ////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//===================================================================================================================
+
 package tasks.saxparser;
 
-import tasks.database.CabrioletDatabaseReader;
-import tasks.database.CrossoverDatabaseReader;
-import tasks.database.SedanDatabaseReader;
-import tasks.database.TruckDatabaseReader;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.*;
 
 /**
@@ -36,9 +43,10 @@ public class Runner {
             XMLFileReader xmlReader = new XMLFileReader(CARS_INFO_XML);
             taxiStation = xmlReader.readInfo();
 
-// ------------------- search a car by parameters in the Taxi Station ---------------------
+// ================================ Search a car by parameters in the Taxi Station ====================================
             boolean condition = true;
-            System.out.println("\nPlease select an appropriate car by car's type, car's brand, " + "transmission type, color and minimum year of car's manufacture");
+            System.out.println("\nPlease select an appropriate car by car's type, car's brand, " + "transmission type," +
+                    " color and minimum year of car's manufacture");
             while (condition) {
                 String carType = TaxiStationOperations.searchCarType(scan);
                 if (carType.equals("Not selected")) {
@@ -62,22 +70,24 @@ public class Runner {
 
                 int сarManufactureYear = TaxiStationOperations.searchCarManufactureYear(scan);
 
-                TaxiStationOperations.searchCarByParameters(taxiStation, carType, carModel, carTransmissionType, carColor, сarManufactureYear);
+                TaxiStationOperations.searchCarByParameters(taxiStation, carType, carModel, carTransmissionType,
+                        carColor, сarManufactureYear);
             }
 
-//--------------- print all cars in the Taxi Station ----------------------------------------
+// ================================= Print all cars in the Taxi Station ==============================================
             TaxiStationOperations.printAllCars(taxiStation);
 
-// --------------- calculate cost of all cars of the Taxi Station ---------------------------
+// ================================== Calculate cost of all cars of the Taxi Station =================================
             TaxiStationOperations.calculateCost(taxiStation);
 
 
-//--------------- sort cars of the Taxi Station by fuel consumption -------------------------
+// =================================== Sort cars of the Taxi Station by fuel consumption =============================
             Collections.sort(taxiStation, new FuelConsumptionComparator());
             System.out.println("\nOrder of cars in the Taxi Station on fuel consumption:");
             int count = 0;
             for (Vehicle car : taxiStation) {
-                System.out.println(++count + ". {" + car.getType() + "}" + ", " + "{\"" + car.getModel() + "\"}" + ", " + "{" + car.getLitresPerHudredKm() + " lpk}");
+                System.out.println(++count + ". {" + car.getType() + "}" + ", " + "{\"" + car.getModel() + "\"}"
+                        + ", " + "{" + car.getLitresPerHudredKm() + " lpk}");
             }
 
         } catch (NoSuchElementException nsee) {

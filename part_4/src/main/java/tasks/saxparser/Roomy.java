@@ -9,5 +9,5 @@ package tasks.saxparser;
  */
 public interface Roomy {
 
-	public void setAddedSeats();
+    public void setAddedSeats();
 }

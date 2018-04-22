@@ -9,6 +9,7 @@ package tasks.saxparser;
  * @since 03/11/2018
  */
 public class InvalidCarTypeException extends Exception {
+
     public InvalidCarTypeException(String message) {
 
         super(message);

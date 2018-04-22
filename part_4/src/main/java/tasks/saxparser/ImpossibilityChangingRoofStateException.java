@@ -10,6 +10,7 @@ package tasks.saxparser;
  * @since 03/11/2018
  */
 public class ImpossibilityChangingRoofStateException extends Exception {
+
     public ImpossibilityChangingRoofStateException(String message) {
         super(message);
     }
