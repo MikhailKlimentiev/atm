@@ -1,4 +1,0 @@
-driver = org.postgresql.Driver
-dbURL = jdbc:postgresql://127.0.0.1:5432/TaxiStation
-user = postgres
-password = postgres

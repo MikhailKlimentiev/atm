@@ -22,7 +22,7 @@
 	</dependencies>
 
 	<modules>
-		<module>pre-selection_tasks</module>
+		<module>00_pre-selection_tasks</module>
 	</modules>
 	
 	<build>
